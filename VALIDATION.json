@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "date": "2026-09-13",
+  "base_tests": {
+    "command": "python3 -B -m pytest -q -p no:cacheprovider tests",
+    "cwd": "package root",
+    "passed": 225,
+    "seconds": 19.15
+  },
+  "e13_tests": {
+    "command": "python3 -B -m pytest -q -p no:cacheprovider tests",
+    "cwd": "experiments/e13_authenticated_fanout",
+    "passed": 21,
+    "seconds": 20.93
+  },
+  "e13_replay": {
+    "status": "passed",
+    "events": 7173,
+    "counts": {
+      "serial": 7137,
+      "race": 18,
+      "restart": 9,
+      "crash": 9
+    },
+    "source_events_sha256": "6792c70c7b1ccb8d5b7df84b8ed98eff43bc2cc8346aee6f5878f4c9c6206a64",
+    "scope": "Exact signed corpus and logical state replay; races linearized to recorded winners; crash records checked as unchanged committed state."
+  },
+  "anonymity_scan": {
+    "author_names_local_paths_private_key_blocks_token_patterns_cloud_account_patterns": "no matches",
+    "email_matches": "reserved example domains in test fixtures only",
+    "scope": "All distributed text files including the entire signed event log; no Git history or binary artifacts included."
+  },
+  "paper_evidence_comparison": {
+    "e12_original_result_bytes": "identical",
+    "e11_aws_trial_records_and_reported_timing_fields": "identical; routing metadata is from the previously sanitized public copy"
+  },
+  "limits": "Package validation reran the included base/E13 tests and exact recorded E13 replay. It did not rerun model/cloud experiments or claim a new concurrent-race measurement.",
+  "scope_update": "Distribution contains only paper experiment harnesses and supporting E10/container E11, plus shared library regression tests. E13 signed corpus and frozen executable sources are unchanged from the previously tested/replayed package."
+}

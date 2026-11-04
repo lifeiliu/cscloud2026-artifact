@@ -1,0 +1,346 @@
+{
+  "status": "passed",
+  "unexpected_aborts": 0,
+  "expectation_mismatches": 0,
+  "elapsed_seconds": 108.66871229093522,
+  "event_count": 7173,
+  "counts": [
+    {
+      "block": "boundary",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "accepted",
+      "count": 780
+    },
+    {
+      "block": "boundary",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "fanout_limit",
+      "count": 360
+    },
+    {
+      "block": "boundary",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "crypto_only",
+      "outcome": "accepted",
+      "count": 1140
+    },
+    {
+      "block": "boundary",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "accepted",
+      "count": 780
+    },
+    {
+      "block": "boundary",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "fanout_limit",
+      "count": 360
+    },
+    {
+      "block": "boundary",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "crypto_only",
+      "outcome": "accepted",
+      "count": 1140
+    },
+    {
+      "block": "boundary",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "accepted",
+      "count": 780
+    },
+    {
+      "block": "boundary",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "fanout_limit",
+      "count": 360
+    },
+    {
+      "block": "boundary",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "crypto_only",
+      "outcome": "accepted",
+      "count": 1140
+    },
+    {
+      "block": "composition",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "accepted",
+      "count": 42
+    },
+    {
+      "block": "composition",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "cryptographic_validation",
+      "count": 15
+    },
+    {
+      "block": "composition",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "fanout_limit",
+      "count": 15
+    },
+    {
+      "block": "composition",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "invalid_policy",
+      "count": 12
+    },
+    {
+      "block": "composition",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "nonce_conflict",
+      "count": 3
+    },
+    {
+      "block": "composition",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "terminal_replay",
+      "count": 3
+    },
+    {
+      "block": "composition",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "accepted",
+      "count": 42
+    },
+    {
+      "block": "composition",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "cryptographic_validation",
+      "count": 15
+    },
+    {
+      "block": "composition",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "fanout_limit",
+      "count": 15
+    },
+    {
+      "block": "composition",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "invalid_policy",
+      "count": 12
+    },
+    {
+      "block": "composition",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "nonce_conflict",
+      "count": 3
+    },
+    {
+      "block": "composition",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "terminal_replay",
+      "count": 3
+    },
+    {
+      "block": "composition",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "accepted",
+      "count": 42
+    },
+    {
+      "block": "composition",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "cryptographic_validation",
+      "count": 15
+    },
+    {
+      "block": "composition",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "fanout_limit",
+      "count": 15
+    },
+    {
+      "block": "composition",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "invalid_policy",
+      "count": 12
+    },
+    {
+      "block": "composition",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "nonce_conflict",
+      "count": 3
+    },
+    {
+      "block": "composition",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "terminal_replay",
+      "count": 3
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "linked_list",
+      "kind": "crash",
+      "arm": "authenticated_fanout",
+      "outcome": "checked",
+      "count": 3
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "linked_list",
+      "kind": "race",
+      "arm": "authenticated_fanout",
+      "outcome": "checked",
+      "count": 6
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "linked_list",
+      "kind": "restart",
+      "arm": "authenticated_fanout",
+      "outcome": "checked",
+      "count": 3
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "accepted",
+      "count": 6
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "linked_list",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "fanout_limit",
+      "count": 3
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "merkle",
+      "kind": "crash",
+      "arm": "authenticated_fanout",
+      "outcome": "checked",
+      "count": 3
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "merkle",
+      "kind": "race",
+      "arm": "authenticated_fanout",
+      "outcome": "checked",
+      "count": 6
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "merkle",
+      "kind": "restart",
+      "arm": "authenticated_fanout",
+      "outcome": "checked",
+      "count": 3
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "accepted",
+      "count": 6
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "merkle",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "fanout_limit",
+      "count": 3
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "signed_dag",
+      "kind": "crash",
+      "arm": "authenticated_fanout",
+      "outcome": "checked",
+      "count": 3
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "signed_dag",
+      "kind": "race",
+      "arm": "authenticated_fanout",
+      "outcome": "checked",
+      "count": 6
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "signed_dag",
+      "kind": "restart",
+      "arm": "authenticated_fanout",
+      "outcome": "checked",
+      "count": 3
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "accepted",
+      "count": 6
+    },
+    {
+      "block": "persistence_concurrency",
+      "design": "signed_dag",
+      "kind": "serial",
+      "arm": "authenticated_fanout",
+      "outcome": "fanout_limit",
+      "count": 3
+    }
+  ],
+  "events_sha256": "6792c70c7b1ccb8d5b7df84b8ed98eff43bc2cc8346aee6f5878f4c9c6206a64"
+}

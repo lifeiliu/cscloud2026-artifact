@@ -1,0 +1,7114 @@
+{
+  "aborted_trials": 0,
+  "complete_verify_ms": {
+    "mean": 2.294194,
+    "p50": 1.902271,
+    "p95": 3.607156,
+    "p99": 7.672138
+  },
+  "cross_deployer_issue_ms": {
+    "mean": 1.419154,
+    "p50": 1.150771,
+    "p95": 2.034297,
+    "p99": 4.32815
+  },
+  "design": "signed_dag",
+  "environment": {
+    "cryptography": "48.0.1",
+    "git_revision": "[redacted]",
+    "machine": "[redacted]",
+    "platform": "[redacted]",
+    "python": "3.11.9",
+    "source_sha256": "0a448d2918f73f80fd6361a840fc352defd538e605996a0e5e30a2d8ad8897c6",
+    "timestamp_utc": "[redacted]"
+  },
+  "execution_mode": {
+    "not_measured": "network, container, KMS, model-client, and production authorization-service latency",
+    "private_key_boundary": "each signer creates and retains its own Ed25519 private key; only public keys, receipts, and signatures leave the worker",
+    "signer_processes": 2,
+    "start_method": "spawn",
+    "transport": "multiprocessing.Pipe local IPC request/response",
+    "verifier_process": "coordinator process"
+  },
+  "faults": {
+    "child_key_rotation": {
+      "new_key_id": "3b6db60cfc57ea1b",
+      "new_receipt_accepted": true,
+      "new_receipt_reason": "accepted",
+      "old_key_id": "8eb8dda17eb1f770",
+      "old_receipt_reason": "record 1 key_id does not match trusted deployer key",
+      "old_receipt_rejected": true
+    },
+    "durable_replay": {
+      "first_presentation_accepted": true,
+      "fresh_verifier_rejected_second_presentation": true,
+      "nonce_store": "SQLite file reopened by a new verifier-store instance",
+      "reason": "record 0 nonce was already consumed"
+    },
+    "parent_refusal": {
+      "issuance_aborted": true,
+      "reason": "platform_A signer rejected request: SignerRPCError: parent policy denied the co-sign request"
+    },
+    "revoked_child_key": {
+      "reason": "record 1 signer key is revoked",
+      "rejected": true
+    },
+    "unregistered_parent": {
+      "reason": "record 0 deployer 'platform_A' is not in the trusted registry",
+      "rejected": true
+    }
+  },
+  "n_trials": 1000,
+  "node_outputs": "deterministic; no LLM invocation",
+  "run_configuration": {
+    "command": "python -m experiments.e10_multiprocess_cross_deployer.run --trials 1000 --warmup 100",
+    "module": "experiments.e10_multiprocess_cross_deployer.run",
+    "state_dir": "[redacted]"
+  },
+  "scenario": "platform_A planner -> platform_B writer",
+  "schema_version": "e10-multiprocess-cross-deployer.v1",
+  "signers_after_faults": [
+    {
+      "deployer": "platform_A",
+      "key_id": "9e2431d530154611",
+      "pid": 56779,
+      "public_key_hex": "8a7fb71650b9e9d0121f4fd31cc8fe0ad9451e0f6d5a753a8db4eccfb09bbe7c"
+    },
+    {
+      "deployer": "platform_B",
+      "key_id": "3b6db60cfc57ea1b",
+      "pid": 56784,
+      "public_key_hex": "d1200265359e58eba44e5feeea7817273b24f468612ce5e3463c472ca1bd1efd"
+    }
+  ],
+  "signers_initial": [
+    {
+      "deployer": "platform_A",
+      "key_id": "9e2431d530154611",
+      "pid": 56779,
+      "public_key_hex": "8a7fb71650b9e9d0121f4fd31cc8fe0ad9451e0f6d5a753a8db4eccfb09bbe7c"
+    },
+    {
+      "deployer": "platform_B",
+      "key_id": "8eb8dda17eb1f770",
+      "pid": 56780,
+      "public_key_hex": "dc3dd1192f9476ebb6daffa793a87ad608a1d3957ea1fcbb2910c9a2b9fecd0d"
+    }
+  ],
+  "trial_records": [
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.923708,
+      "cross_deployer_issue_ms": 1.042,
+      "trial": 0,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.806166,
+      "cross_deployer_issue_ms": 1.097792,
+      "trial": 1,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.687583,
+      "cross_deployer_issue_ms": 1.004208,
+      "trial": 2,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.408459,
+      "cross_deployer_issue_ms": 0.940666,
+      "trial": 3,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.817708,
+      "cross_deployer_issue_ms": 0.9905,
+      "trial": 4,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.660875,
+      "cross_deployer_issue_ms": 0.960083,
+      "trial": 5,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.72975,
+      "cross_deployer_issue_ms": 0.952417,
+      "trial": 6,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.980833,
+      "cross_deployer_issue_ms": 0.987291,
+      "trial": 7,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.047125,
+      "cross_deployer_issue_ms": 1.229375,
+      "trial": 8,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.786875,
+      "cross_deployer_issue_ms": 1.107,
+      "trial": 9,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.870667,
+      "cross_deployer_issue_ms": 1.0195,
+      "trial": 10,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.785792,
+      "cross_deployer_issue_ms": 1.062667,
+      "trial": 11,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.741083,
+      "cross_deployer_issue_ms": 0.923542,
+      "trial": 12,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.437666,
+      "cross_deployer_issue_ms": 0.937875,
+      "trial": 13,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.673666,
+      "cross_deployer_issue_ms": 0.983667,
+      "trial": 14,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.829792,
+      "cross_deployer_issue_ms": 1.005958,
+      "trial": 15,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.86275,
+      "cross_deployer_issue_ms": 0.923875,
+      "trial": 16,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.944208,
+      "cross_deployer_issue_ms": 1.024625,
+      "trial": 17,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.053042,
+      "cross_deployer_issue_ms": 1.23675,
+      "trial": 18,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.820875,
+      "cross_deployer_issue_ms": 1.139208,
+      "trial": 19,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.878291,
+      "cross_deployer_issue_ms": 1.139791,
+      "trial": 20,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.065,
+      "cross_deployer_issue_ms": 1.372375,
+      "trial": 21,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.849458,
+      "cross_deployer_issue_ms": 1.041541,
+      "trial": 22,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.253458,
+      "cross_deployer_issue_ms": 1.019541,
+      "trial": 23,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.183291,
+      "cross_deployer_issue_ms": 1.265459,
+      "trial": 24,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.859584,
+      "cross_deployer_issue_ms": 1.067375,
+      "trial": 25,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.160041,
+      "cross_deployer_issue_ms": 1.013959,
+      "trial": 26,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.027084,
+      "cross_deployer_issue_ms": 1.234458,
+      "trial": 27,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.002584,
+      "cross_deployer_issue_ms": 1.212333,
+      "trial": 28,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.999458,
+      "cross_deployer_issue_ms": 1.237292,
+      "trial": 29,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.046292,
+      "cross_deployer_issue_ms": 1.132417,
+      "trial": 30,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.862292,
+      "cross_deployer_issue_ms": 1.077834,
+      "trial": 31,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.971542,
+      "cross_deployer_issue_ms": 1.020666,
+      "trial": 32,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.930583,
+      "cross_deployer_issue_ms": 1.099584,
+      "trial": 33,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.594,
+      "cross_deployer_issue_ms": 1.062334,
+      "trial": 34,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.025291,
+      "cross_deployer_issue_ms": 1.083042,
+      "trial": 35,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.800291,
+      "cross_deployer_issue_ms": 1.257417,
+      "trial": 36,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.730625,
+      "cross_deployer_issue_ms": 0.955792,
+      "trial": 37,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.719916,
+      "cross_deployer_issue_ms": 0.931084,
+      "trial": 38,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.930208,
+      "cross_deployer_issue_ms": 1.174084,
+      "trial": 39,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.7005,
+      "cross_deployer_issue_ms": 1.056375,
+      "trial": 40,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.64725,
+      "cross_deployer_issue_ms": 0.970959,
+      "trial": 41,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.762417,
+      "cross_deployer_issue_ms": 0.983916,
+      "trial": 42,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.637917,
+      "cross_deployer_issue_ms": 0.927833,
+      "trial": 43,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.407459,
+      "cross_deployer_issue_ms": 0.978708,
+      "trial": 44,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.793084,
+      "cross_deployer_issue_ms": 1.143292,
+      "trial": 45,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.997125,
+      "cross_deployer_issue_ms": 1.204167,
+      "trial": 46,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.792791,
+      "cross_deployer_issue_ms": 1.114292,
+      "trial": 47,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.809875,
+      "cross_deployer_issue_ms": 1.112208,
+      "trial": 48,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.852667,
+      "cross_deployer_issue_ms": 1.051667,
+      "trial": 49,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.82225,
+      "cross_deployer_issue_ms": 1.027667,
+      "trial": 50,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.826625,
+      "cross_deployer_issue_ms": 1.092667,
+      "trial": 51,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.825583,
+      "cross_deployer_issue_ms": 1.151125,
+      "trial": 52,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.010167,
+      "cross_deployer_issue_ms": 1.161,
+      "trial": 53,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 5.266375,
+      "cross_deployer_issue_ms": 1.412959,
+      "trial": 54,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.8925,
+      "cross_deployer_issue_ms": 1.702958,
+      "trial": 55,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.501958,
+      "cross_deployer_issue_ms": 4.030459,
+      "trial": 56,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.065375,
+      "cross_deployer_issue_ms": 1.820417,
+      "trial": 57,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.323666,
+      "cross_deployer_issue_ms": 1.841208,
+      "trial": 58,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.677666,
+      "cross_deployer_issue_ms": 1.429084,
+      "trial": 59,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.235334,
+      "cross_deployer_issue_ms": 1.462375,
+      "trial": 60,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.098083,
+      "cross_deployer_issue_ms": 1.338209,
+      "trial": 61,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.178791,
+      "cross_deployer_issue_ms": 1.206291,
+      "trial": 62,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.469042,
+      "cross_deployer_issue_ms": 1.298333,
+      "trial": 63,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 5.376166,
+      "cross_deployer_issue_ms": 2.086166,
+      "trial": 64,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.139958,
+      "cross_deployer_issue_ms": 1.217334,
+      "trial": 65,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.081542,
+      "cross_deployer_issue_ms": 1.127,
+      "trial": 66,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.048583,
+      "cross_deployer_issue_ms": 1.112458,
+      "trial": 67,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.989875,
+      "cross_deployer_issue_ms": 1.682042,
+      "trial": 68,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.972417,
+      "cross_deployer_issue_ms": 1.157625,
+      "trial": 69,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.050125,
+      "cross_deployer_issue_ms": 1.10425,
+      "trial": 70,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.032083,
+      "cross_deployer_issue_ms": 1.19675,
+      "trial": 71,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.889292,
+      "cross_deployer_issue_ms": 1.081375,
+      "trial": 72,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.872417,
+      "cross_deployer_issue_ms": 1.095084,
+      "trial": 73,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.803209,
+      "cross_deployer_issue_ms": 1.105458,
+      "trial": 74,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.558292,
+      "cross_deployer_issue_ms": 1.1135,
+      "trial": 75,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.01025,
+      "cross_deployer_issue_ms": 1.229167,
+      "trial": 76,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.836208,
+      "cross_deployer_issue_ms": 1.171625,
+      "trial": 77,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.095125,
+      "cross_deployer_issue_ms": 1.300709,
+      "trial": 78,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.031666,
+      "cross_deployer_issue_ms": 1.199375,
+      "trial": 79,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.801916,
+      "cross_deployer_issue_ms": 1.191375,
+      "trial": 80,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.775083,
+      "cross_deployer_issue_ms": 1.052084,
+      "trial": 81,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.5765,
+      "cross_deployer_issue_ms": 1.033833,
+      "trial": 82,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.642833,
+      "cross_deployer_issue_ms": 0.957709,
+      "trial": 83,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.685125,
+      "cross_deployer_issue_ms": 1.014958,
+      "trial": 84,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.5155,
+      "cross_deployer_issue_ms": 0.976041,
+      "trial": 85,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.914625,
+      "cross_deployer_issue_ms": 1.117958,
+      "trial": 86,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.838375,
+      "cross_deployer_issue_ms": 1.155541,
+      "trial": 87,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.8255,
+      "cross_deployer_issue_ms": 1.165458,
+      "trial": 88,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.845125,
+      "cross_deployer_issue_ms": 1.090958,
+      "trial": 89,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.904542,
+      "cross_deployer_issue_ms": 1.023333,
+      "trial": 90,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.256958,
+      "cross_deployer_issue_ms": 1.061042,
+      "trial": 91,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 7.568875,
+      "cross_deployer_issue_ms": 2.864667,
+      "trial": 92,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.757875,
+      "cross_deployer_issue_ms": 1.334958,
+      "trial": 93,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.977666,
+      "cross_deployer_issue_ms": 1.374875,
+      "trial": 94,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.770833,
+      "cross_deployer_issue_ms": 1.385583,
+      "trial": 95,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.349459,
+      "cross_deployer_issue_ms": 1.994125,
+      "trial": 96,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.07775,
+      "cross_deployer_issue_ms": 1.440541,
+      "trial": 97,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.132583,
+      "cross_deployer_issue_ms": 1.222917,
+      "trial": 98,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.979458,
+      "cross_deployer_issue_ms": 1.171042,
+      "trial": 99,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.083958,
+      "cross_deployer_issue_ms": 1.233458,
+      "trial": 100,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.999834,
+      "cross_deployer_issue_ms": 1.450833,
+      "trial": 101,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.504209,
+      "cross_deployer_issue_ms": 1.869875,
+      "trial": 102,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.298542,
+      "cross_deployer_issue_ms": 1.361542,
+      "trial": 103,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.199917,
+      "cross_deployer_issue_ms": 1.155541,
+      "trial": 104,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 38.570166,
+      "cross_deployer_issue_ms": 2.493666,
+      "trial": 105,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.604875,
+      "cross_deployer_issue_ms": 74.816042,
+      "trial": 106,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.680292,
+      "cross_deployer_issue_ms": 2.182209,
+      "trial": 107,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 38.632375,
+      "cross_deployer_issue_ms": 4.277375,
+      "trial": 108,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.087917,
+      "cross_deployer_issue_ms": 6.695917,
+      "trial": 109,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.564,
+      "cross_deployer_issue_ms": 1.87325,
+      "trial": 110,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.559084,
+      "cross_deployer_issue_ms": 1.253958,
+      "trial": 111,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.971084,
+      "cross_deployer_issue_ms": 1.416333,
+      "trial": 112,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.918708,
+      "cross_deployer_issue_ms": 1.118917,
+      "trial": 113,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.994542,
+      "cross_deployer_issue_ms": 1.121541,
+      "trial": 114,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.958708,
+      "cross_deployer_issue_ms": 1.339958,
+      "trial": 115,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.929708,
+      "cross_deployer_issue_ms": 1.069958,
+      "trial": 116,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.791417,
+      "cross_deployer_issue_ms": 1.157458,
+      "trial": 117,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.945792,
+      "cross_deployer_issue_ms": 1.384792,
+      "trial": 118,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.084667,
+      "cross_deployer_issue_ms": 1.126833,
+      "trial": 119,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.072292,
+      "cross_deployer_issue_ms": 1.113917,
+      "trial": 120,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.944917,
+      "cross_deployer_issue_ms": 1.085042,
+      "trial": 121,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.9285,
+      "cross_deployer_issue_ms": 1.060792,
+      "trial": 122,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.925167,
+      "cross_deployer_issue_ms": 1.179791,
+      "trial": 123,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.001791,
+      "cross_deployer_issue_ms": 1.1195,
+      "trial": 124,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.812083,
+      "cross_deployer_issue_ms": 1.101959,
+      "trial": 125,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.557833,
+      "cross_deployer_issue_ms": 1.217042,
+      "trial": 126,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.010416,
+      "cross_deployer_issue_ms": 1.358083,
+      "trial": 127,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.980375,
+      "cross_deployer_issue_ms": 1.184,
+      "trial": 128,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.245334,
+      "cross_deployer_issue_ms": 1.204042,
+      "trial": 129,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.199958,
+      "cross_deployer_issue_ms": 1.308417,
+      "trial": 130,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.90025,
+      "cross_deployer_issue_ms": 1.148375,
+      "trial": 131,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.915792,
+      "cross_deployer_issue_ms": 1.157083,
+      "trial": 132,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.07375,
+      "cross_deployer_issue_ms": 1.059083,
+      "trial": 133,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.842875,
+      "cross_deployer_issue_ms": 1.118625,
+      "trial": 134,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.356375,
+      "cross_deployer_issue_ms": 1.223292,
+      "trial": 135,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.726166,
+      "cross_deployer_issue_ms": 1.102125,
+      "trial": 136,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.09625,
+      "cross_deployer_issue_ms": 1.095958,
+      "trial": 137,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.707291,
+      "cross_deployer_issue_ms": 1.268917,
+      "trial": 138,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.89075,
+      "cross_deployer_issue_ms": 1.266875,
+      "trial": 139,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.816958,
+      "cross_deployer_issue_ms": 1.204042,
+      "trial": 140,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.895125,
+      "cross_deployer_issue_ms": 1.050042,
+      "trial": 141,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.815208,
+      "cross_deployer_issue_ms": 1.125375,
+      "trial": 142,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.928958,
+      "cross_deployer_issue_ms": 1.195209,
+      "trial": 143,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.639166,
+      "cross_deployer_issue_ms": 1.143125,
+      "trial": 144,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.08125,
+      "cross_deployer_issue_ms": 1.133875,
+      "trial": 145,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.016541,
+      "cross_deployer_issue_ms": 1.324875,
+      "trial": 146,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.4685,
+      "cross_deployer_issue_ms": 1.181166,
+      "trial": 147,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.915083,
+      "cross_deployer_issue_ms": 1.170042,
+      "trial": 148,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.890417,
+      "cross_deployer_issue_ms": 1.093583,
+      "trial": 149,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.981,
+      "cross_deployer_issue_ms": 0.974,
+      "trial": 150,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.818875,
+      "cross_deployer_issue_ms": 1.114291,
+      "trial": 151,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.652791,
+      "cross_deployer_issue_ms": 1.032416,
+      "trial": 152,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.789375,
+      "cross_deployer_issue_ms": 0.985208,
+      "trial": 153,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.738958,
+      "cross_deployer_issue_ms": 0.949208,
+      "trial": 154,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.685542,
+      "cross_deployer_issue_ms": 0.958125,
+      "trial": 155,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.89275,
+      "cross_deployer_issue_ms": 1.043583,
+      "trial": 156,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.934667,
+      "cross_deployer_issue_ms": 1.034667,
+      "trial": 157,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.785416,
+      "cross_deployer_issue_ms": 1.049417,
+      "trial": 158,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.785,
+      "cross_deployer_issue_ms": 1.055166,
+      "trial": 159,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.658875,
+      "cross_deployer_issue_ms": 0.94975,
+      "trial": 160,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.756333,
+      "cross_deployer_issue_ms": 1.155875,
+      "trial": 161,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.748542,
+      "cross_deployer_issue_ms": 1.025583,
+      "trial": 162,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.633583,
+      "cross_deployer_issue_ms": 1.004167,
+      "trial": 163,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.783792,
+      "cross_deployer_issue_ms": 1.071291,
+      "trial": 164,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.482292,
+      "cross_deployer_issue_ms": 1.065792,
+      "trial": 165,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.235625,
+      "cross_deployer_issue_ms": 1.66225,
+      "trial": 166,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.102042,
+      "cross_deployer_issue_ms": 2.881125,
+      "trial": 167,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.92175,
+      "cross_deployer_issue_ms": 1.2345,
+      "trial": 168,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.949916,
+      "cross_deployer_issue_ms": 1.305042,
+      "trial": 169,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.642292,
+      "cross_deployer_issue_ms": 1.044917,
+      "trial": 170,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.974084,
+      "cross_deployer_issue_ms": 1.263542,
+      "trial": 171,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.051333,
+      "cross_deployer_issue_ms": 1.080125,
+      "trial": 172,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.052625,
+      "cross_deployer_issue_ms": 1.274959,
+      "trial": 173,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.999291,
+      "cross_deployer_issue_ms": 1.130917,
+      "trial": 174,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.9985,
+      "cross_deployer_issue_ms": 1.263916,
+      "trial": 175,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.793042,
+      "cross_deployer_issue_ms": 1.265667,
+      "trial": 176,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.802666,
+      "cross_deployer_issue_ms": 1.037667,
+      "trial": 177,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.810084,
+      "cross_deployer_issue_ms": 1.14,
+      "trial": 178,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.593709,
+      "cross_deployer_issue_ms": 0.987834,
+      "trial": 179,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.549208,
+      "cross_deployer_issue_ms": 0.897,
+      "trial": 180,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.905875,
+      "cross_deployer_issue_ms": 1.014666,
+      "trial": 181,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.728,
+      "cross_deployer_issue_ms": 1.816958,
+      "trial": 182,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.683917,
+      "cross_deployer_issue_ms": 1.046917,
+      "trial": 183,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.731125,
+      "cross_deployer_issue_ms": 1.000875,
+      "trial": 184,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.944667,
+      "cross_deployer_issue_ms": 1.129041,
+      "trial": 185,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.057291,
+      "cross_deployer_issue_ms": 1.075834,
+      "trial": 186,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.673875,
+      "cross_deployer_issue_ms": 1.059917,
+      "trial": 187,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.010833,
+      "cross_deployer_issue_ms": 1.073084,
+      "trial": 188,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.781584,
+      "cross_deployer_issue_ms": 1.189459,
+      "trial": 189,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.629666,
+      "cross_deployer_issue_ms": 1.041833,
+      "trial": 190,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.569667,
+      "cross_deployer_issue_ms": 0.983875,
+      "trial": 191,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.7425,
+      "cross_deployer_issue_ms": 1.170875,
+      "trial": 192,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.776292,
+      "cross_deployer_issue_ms": 0.95825,
+      "trial": 193,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.901542,
+      "cross_deployer_issue_ms": 1.150042,
+      "trial": 194,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.720959,
+      "cross_deployer_issue_ms": 1.126834,
+      "trial": 195,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.845708,
+      "cross_deployer_issue_ms": 1.171208,
+      "trial": 196,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.720792,
+      "cross_deployer_issue_ms": 1.357,
+      "trial": 197,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.557959,
+      "cross_deployer_issue_ms": 1.041833,
+      "trial": 198,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.94225,
+      "cross_deployer_issue_ms": 0.943125,
+      "trial": 199,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.769042,
+      "cross_deployer_issue_ms": 0.967959,
+      "trial": 200,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.668291,
+      "cross_deployer_issue_ms": 1.027042,
+      "trial": 201,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.726833,
+      "cross_deployer_issue_ms": 1.035584,
+      "trial": 202,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.740292,
+      "cross_deployer_issue_ms": 1.038708,
+      "trial": 203,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.772583,
+      "cross_deployer_issue_ms": 1.060166,
+      "trial": 204,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.7915,
+      "cross_deployer_issue_ms": 1.313125,
+      "trial": 205,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.542834,
+      "cross_deployer_issue_ms": 4.409041,
+      "trial": 206,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.163292,
+      "cross_deployer_issue_ms": 1.556292,
+      "trial": 207,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.876833,
+      "cross_deployer_issue_ms": 1.081,
+      "trial": 208,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.738167,
+      "cross_deployer_issue_ms": 1.086709,
+      "trial": 209,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.886875,
+      "cross_deployer_issue_ms": 1.177709,
+      "trial": 210,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.800834,
+      "cross_deployer_issue_ms": 1.134834,
+      "trial": 211,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.858792,
+      "cross_deployer_issue_ms": 1.281167,
+      "trial": 212,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.843,
+      "cross_deployer_issue_ms": 1.106084,
+      "trial": 213,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.668375,
+      "cross_deployer_issue_ms": 1.028958,
+      "trial": 214,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.7255,
+      "cross_deployer_issue_ms": 0.994125,
+      "trial": 215,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.334792,
+      "cross_deployer_issue_ms": 1.079709,
+      "trial": 216,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.965875,
+      "cross_deployer_issue_ms": 1.890792,
+      "trial": 217,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.702042,
+      "cross_deployer_issue_ms": 1.041584,
+      "trial": 218,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.82325,
+      "cross_deployer_issue_ms": 0.92525,
+      "trial": 219,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.70025,
+      "cross_deployer_issue_ms": 1.0385,
+      "trial": 220,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.7235,
+      "cross_deployer_issue_ms": 1.007166,
+      "trial": 221,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.763959,
+      "cross_deployer_issue_ms": 0.922625,
+      "trial": 222,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.785208,
+      "cross_deployer_issue_ms": 1.136875,
+      "trial": 223,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.623584,
+      "cross_deployer_issue_ms": 1.100209,
+      "trial": 224,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.8595,
+      "cross_deployer_issue_ms": 1.023083,
+      "trial": 225,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.943792,
+      "cross_deployer_issue_ms": 1.003542,
+      "trial": 226,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.845833,
+      "cross_deployer_issue_ms": 1.1275,
+      "trial": 227,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.558042,
+      "cross_deployer_issue_ms": 1.051084,
+      "trial": 228,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.8015,
+      "cross_deployer_issue_ms": 1.000292,
+      "trial": 229,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.798375,
+      "cross_deployer_issue_ms": 1.124583,
+      "trial": 230,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.711625,
+      "cross_deployer_issue_ms": 0.996459,
+      "trial": 231,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.696334,
+      "cross_deployer_issue_ms": 0.973375,
+      "trial": 232,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.791584,
+      "cross_deployer_issue_ms": 1.180458,
+      "trial": 233,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.768792,
+      "cross_deployer_issue_ms": 1.093459,
+      "trial": 234,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.967375,
+      "cross_deployer_issue_ms": 1.314792,
+      "trial": 235,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.489875,
+      "cross_deployer_issue_ms": 1.089375,
+      "trial": 236,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.177791,
+      "cross_deployer_issue_ms": 1.486292,
+      "trial": 237,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.758708,
+      "cross_deployer_issue_ms": 1.196,
+      "trial": 238,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.007292,
+      "cross_deployer_issue_ms": 1.044875,
+      "trial": 239,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.600542,
+      "cross_deployer_issue_ms": 1.026541,
+      "trial": 240,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.679083,
+      "cross_deployer_issue_ms": 1.092125,
+      "trial": 241,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.811792,
+      "cross_deployer_issue_ms": 1.051708,
+      "trial": 242,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.913084,
+      "cross_deployer_issue_ms": 1.191667,
+      "trial": 243,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.817709,
+      "cross_deployer_issue_ms": 1.444292,
+      "trial": 244,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.702125,
+      "cross_deployer_issue_ms": 1.130334,
+      "trial": 245,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.734667,
+      "cross_deployer_issue_ms": 1.048584,
+      "trial": 246,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.673125,
+      "cross_deployer_issue_ms": 1.084583,
+      "trial": 247,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.53525,
+      "cross_deployer_issue_ms": 1.009583,
+      "trial": 248,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.44075,
+      "cross_deployer_issue_ms": 0.925375,
+      "trial": 249,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.467167,
+      "cross_deployer_issue_ms": 0.915083,
+      "trial": 250,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.510167,
+      "cross_deployer_issue_ms": 0.938792,
+      "trial": 251,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.500708,
+      "cross_deployer_issue_ms": 1.990834,
+      "trial": 252,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.480959,
+      "cross_deployer_issue_ms": 0.904333,
+      "trial": 253,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.938125,
+      "cross_deployer_issue_ms": 1.137125,
+      "trial": 254,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.869166,
+      "cross_deployer_issue_ms": 1.065541,
+      "trial": 255,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.845166,
+      "cross_deployer_issue_ms": 1.330208,
+      "trial": 256,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.692875,
+      "cross_deployer_issue_ms": 0.998125,
+      "trial": 257,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.733333,
+      "cross_deployer_issue_ms": 1.071042,
+      "trial": 258,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.591292,
+      "cross_deployer_issue_ms": 0.961833,
+      "trial": 259,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.529583,
+      "cross_deployer_issue_ms": 0.915667,
+      "trial": 260,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.470708,
+      "cross_deployer_issue_ms": 0.903208,
+      "trial": 261,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.547292,
+      "cross_deployer_issue_ms": 0.922041,
+      "trial": 262,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.391625,
+      "cross_deployer_issue_ms": 0.909708,
+      "trial": 263,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.898916,
+      "cross_deployer_issue_ms": 0.917959,
+      "trial": 264,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.329541,
+      "cross_deployer_issue_ms": 1.127167,
+      "trial": 265,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.305625,
+      "cross_deployer_issue_ms": 5.020167,
+      "trial": 266,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.197916,
+      "cross_deployer_issue_ms": 1.577083,
+      "trial": 267,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.972959,
+      "cross_deployer_issue_ms": 1.218417,
+      "trial": 268,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.674125,
+      "cross_deployer_issue_ms": 1.137834,
+      "trial": 269,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.143292,
+      "cross_deployer_issue_ms": 1.087,
+      "trial": 270,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.855792,
+      "cross_deployer_issue_ms": 1.056375,
+      "trial": 271,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.724333,
+      "cross_deployer_issue_ms": 1.017875,
+      "trial": 272,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.920791,
+      "cross_deployer_issue_ms": 1.071417,
+      "trial": 273,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.848584,
+      "cross_deployer_issue_ms": 1.200375,
+      "trial": 274,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.956417,
+      "cross_deployer_issue_ms": 1.266959,
+      "trial": 275,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.735792,
+      "cross_deployer_issue_ms": 1.224667,
+      "trial": 276,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.692958,
+      "cross_deployer_issue_ms": 1.1965,
+      "trial": 277,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.84725,
+      "cross_deployer_issue_ms": 1.124667,
+      "trial": 278,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.891292,
+      "cross_deployer_issue_ms": 1.166583,
+      "trial": 279,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.401417,
+      "cross_deployer_issue_ms": 1.4745,
+      "trial": 280,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.876875,
+      "cross_deployer_issue_ms": 1.115042,
+      "trial": 281,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 6.679167,
+      "cross_deployer_issue_ms": 1.563375,
+      "trial": 282,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.12925,
+      "cross_deployer_issue_ms": 2.621667,
+      "trial": 283,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.0455,
+      "cross_deployer_issue_ms": 1.526875,
+      "trial": 284,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.536542,
+      "cross_deployer_issue_ms": 1.745875,
+      "trial": 285,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.074416,
+      "cross_deployer_issue_ms": 1.363875,
+      "trial": 286,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.434459,
+      "cross_deployer_issue_ms": 2.535417,
+      "trial": 287,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.020709,
+      "cross_deployer_issue_ms": 1.27925,
+      "trial": 288,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.597416,
+      "cross_deployer_issue_ms": 1.361834,
+      "trial": 289,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.056459,
+      "cross_deployer_issue_ms": 1.296833,
+      "trial": 290,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.1605,
+      "cross_deployer_issue_ms": 1.186166,
+      "trial": 291,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.5715,
+      "cross_deployer_issue_ms": 2.399959,
+      "trial": 292,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.289708,
+      "cross_deployer_issue_ms": 1.202708,
+      "trial": 293,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.865625,
+      "cross_deployer_issue_ms": 2.152042,
+      "trial": 294,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.991542,
+      "cross_deployer_issue_ms": 1.203,
+      "trial": 295,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.9,
+      "cross_deployer_issue_ms": 1.227834,
+      "trial": 296,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.737667,
+      "cross_deployer_issue_ms": 1.075083,
+      "trial": 297,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.65325,
+      "cross_deployer_issue_ms": 0.963292,
+      "trial": 298,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.114208,
+      "cross_deployer_issue_ms": 1.417791,
+      "trial": 299,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.609291,
+      "cross_deployer_issue_ms": 2.925417,
+      "trial": 300,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.952291,
+      "cross_deployer_issue_ms": 1.198333,
+      "trial": 301,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.643083,
+      "cross_deployer_issue_ms": 1.176041,
+      "trial": 302,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.936375,
+      "cross_deployer_issue_ms": 1.115042,
+      "trial": 303,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.6545,
+      "cross_deployer_issue_ms": 1.067916,
+      "trial": 304,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.145833,
+      "cross_deployer_issue_ms": 1.05,
+      "trial": 305,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.866667,
+      "cross_deployer_issue_ms": 1.122541,
+      "trial": 306,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.907084,
+      "cross_deployer_issue_ms": 1.45625,
+      "trial": 307,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.757625,
+      "cross_deployer_issue_ms": 1.089166,
+      "trial": 308,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.584,
+      "cross_deployer_issue_ms": 1.124708,
+      "trial": 309,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.469917,
+      "cross_deployer_issue_ms": 0.996083,
+      "trial": 310,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.726166,
+      "cross_deployer_issue_ms": 0.999875,
+      "trial": 311,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.6115,
+      "cross_deployer_issue_ms": 1.011375,
+      "trial": 312,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.794916,
+      "cross_deployer_issue_ms": 1.058084,
+      "trial": 313,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.629459,
+      "cross_deployer_issue_ms": 1.043458,
+      "trial": 314,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.867667,
+      "cross_deployer_issue_ms": 0.946292,
+      "trial": 315,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.279875,
+      "cross_deployer_issue_ms": 1.337417,
+      "trial": 316,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.6505,
+      "cross_deployer_issue_ms": 3.273125,
+      "trial": 317,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.903,
+      "cross_deployer_issue_ms": 1.159458,
+      "trial": 318,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.733125,
+      "cross_deployer_issue_ms": 1.20475,
+      "trial": 319,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.556916,
+      "cross_deployer_issue_ms": 1.099834,
+      "trial": 320,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.594542,
+      "cross_deployer_issue_ms": 1.038125,
+      "trial": 321,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.725875,
+      "cross_deployer_issue_ms": 1.859583,
+      "trial": 322,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.724708,
+      "cross_deployer_issue_ms": 1.039375,
+      "trial": 323,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.709583,
+      "cross_deployer_issue_ms": 0.987833,
+      "trial": 324,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.619166,
+      "cross_deployer_issue_ms": 0.926667,
+      "trial": 325,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.653833,
+      "cross_deployer_issue_ms": 0.9025,
+      "trial": 326,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.768583,
+      "cross_deployer_issue_ms": 1.100459,
+      "trial": 327,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.911708,
+      "cross_deployer_issue_ms": 1.290208,
+      "trial": 328,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.782583,
+      "cross_deployer_issue_ms": 1.418291,
+      "trial": 329,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.8325,
+      "cross_deployer_issue_ms": 1.013084,
+      "trial": 330,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.697334,
+      "cross_deployer_issue_ms": 1.037667,
+      "trial": 331,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.653458,
+      "cross_deployer_issue_ms": 1.036708,
+      "trial": 332,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 7.941542,
+      "cross_deployer_issue_ms": 0.988209,
+      "trial": 333,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 7.232417,
+      "cross_deployer_issue_ms": 1.270667,
+      "trial": 334,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.278125,
+      "cross_deployer_issue_ms": 1.297042,
+      "trial": 335,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.214917,
+      "cross_deployer_issue_ms": 1.276084,
+      "trial": 336,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.846584,
+      "cross_deployer_issue_ms": 1.176042,
+      "trial": 337,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.735208,
+      "cross_deployer_issue_ms": 1.013458,
+      "trial": 338,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.782583,
+      "cross_deployer_issue_ms": 1.1475,
+      "trial": 339,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.886541,
+      "cross_deployer_issue_ms": 1.037792,
+      "trial": 340,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.267,
+      "cross_deployer_issue_ms": 1.202167,
+      "trial": 341,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.611166,
+      "cross_deployer_issue_ms": 2.384209,
+      "trial": 342,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.941708,
+      "cross_deployer_issue_ms": 2.141,
+      "trial": 343,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.886958,
+      "cross_deployer_issue_ms": 1.215583,
+      "trial": 344,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.601583,
+      "cross_deployer_issue_ms": 1.053917,
+      "trial": 345,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.538583,
+      "cross_deployer_issue_ms": 0.971583,
+      "trial": 346,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.645875,
+      "cross_deployer_issue_ms": 0.913083,
+      "trial": 347,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.6895,
+      "cross_deployer_issue_ms": 1.091292,
+      "trial": 348,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.791167,
+      "cross_deployer_issue_ms": 1.141959,
+      "trial": 349,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.560958,
+      "cross_deployer_issue_ms": 0.996,
+      "trial": 350,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.754833,
+      "cross_deployer_issue_ms": 1.027625,
+      "trial": 351,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.860583,
+      "cross_deployer_issue_ms": 1.135125,
+      "trial": 352,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.803666,
+      "cross_deployer_issue_ms": 1.007833,
+      "trial": 353,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.698041,
+      "cross_deployer_issue_ms": 0.991875,
+      "trial": 354,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.778417,
+      "cross_deployer_issue_ms": 1.037708,
+      "trial": 355,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.678,
+      "cross_deployer_issue_ms": 1.0485,
+      "trial": 356,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.692458,
+      "cross_deployer_issue_ms": 1.964542,
+      "trial": 357,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.64925,
+      "cross_deployer_issue_ms": 0.941458,
+      "trial": 358,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.601583,
+      "cross_deployer_issue_ms": 0.951042,
+      "trial": 359,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.751167,
+      "cross_deployer_issue_ms": 0.971583,
+      "trial": 360,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.747875,
+      "cross_deployer_issue_ms": 0.992416,
+      "trial": 361,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.187,
+      "cross_deployer_issue_ms": 1.162,
+      "trial": 362,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.010583,
+      "cross_deployer_issue_ms": 1.79375,
+      "trial": 363,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.798458,
+      "cross_deployer_issue_ms": 1.402291,
+      "trial": 364,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.994208,
+      "cross_deployer_issue_ms": 1.137625,
+      "trial": 365,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.806833,
+      "cross_deployer_issue_ms": 1.141875,
+      "trial": 366,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.780083,
+      "cross_deployer_issue_ms": 0.983875,
+      "trial": 367,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.650083,
+      "cross_deployer_issue_ms": 1.018041,
+      "trial": 368,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.557375,
+      "cross_deployer_issue_ms": 1.155959,
+      "trial": 369,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.687042,
+      "cross_deployer_issue_ms": 0.990334,
+      "trial": 370,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.667208,
+      "cross_deployer_issue_ms": 0.978458,
+      "trial": 371,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.670541,
+      "cross_deployer_issue_ms": 0.996917,
+      "trial": 372,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.756583,
+      "cross_deployer_issue_ms": 1.230584,
+      "trial": 373,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.876541,
+      "cross_deployer_issue_ms": 1.057333,
+      "trial": 374,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.56325,
+      "cross_deployer_issue_ms": 1.011542,
+      "trial": 375,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.745417,
+      "cross_deployer_issue_ms": 1.114792,
+      "trial": 376,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.737375,
+      "cross_deployer_issue_ms": 1.071292,
+      "trial": 377,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.65575,
+      "cross_deployer_issue_ms": 0.993416,
+      "trial": 378,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.643417,
+      "cross_deployer_issue_ms": 0.948083,
+      "trial": 379,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.52325,
+      "cross_deployer_issue_ms": 1.171833,
+      "trial": 380,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 11.639875,
+      "cross_deployer_issue_ms": 1.338583,
+      "trial": 381,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 6.820459,
+      "cross_deployer_issue_ms": 24.833709,
+      "trial": 382,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 11.343084,
+      "cross_deployer_issue_ms": 5.8105,
+      "trial": 383,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.264458,
+      "cross_deployer_issue_ms": 1.461667,
+      "trial": 384,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.3295,
+      "cross_deployer_issue_ms": 1.501125,
+      "trial": 385,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.328375,
+      "cross_deployer_issue_ms": 1.378708,
+      "trial": 386,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.556792,
+      "cross_deployer_issue_ms": 1.145916,
+      "trial": 387,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.875375,
+      "cross_deployer_issue_ms": 1.166167,
+      "trial": 388,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.815708,
+      "cross_deployer_issue_ms": 1.253125,
+      "trial": 389,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.764417,
+      "cross_deployer_issue_ms": 1.297,
+      "trial": 390,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.988833,
+      "cross_deployer_issue_ms": 1.141041,
+      "trial": 391,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.993459,
+      "cross_deployer_issue_ms": 2.373375,
+      "trial": 392,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.552875,
+      "cross_deployer_issue_ms": 2.354917,
+      "trial": 393,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.928458,
+      "cross_deployer_issue_ms": 1.535042,
+      "trial": 394,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.295541,
+      "cross_deployer_issue_ms": 1.255167,
+      "trial": 395,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 7.669417,
+      "cross_deployer_issue_ms": 23.969667,
+      "trial": 396,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.176042,
+      "cross_deployer_issue_ms": 3.910041,
+      "trial": 397,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.843417,
+      "cross_deployer_issue_ms": 1.249125,
+      "trial": 398,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.586458,
+      "cross_deployer_issue_ms": 1.289583,
+      "trial": 399,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.893709,
+      "cross_deployer_issue_ms": 1.216166,
+      "trial": 400,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.663209,
+      "cross_deployer_issue_ms": 1.118291,
+      "trial": 401,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.802541,
+      "cross_deployer_issue_ms": 1.032791,
+      "trial": 402,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.8655,
+      "cross_deployer_issue_ms": 1.073042,
+      "trial": 403,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.185417,
+      "cross_deployer_issue_ms": 1.046459,
+      "trial": 404,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.729417,
+      "cross_deployer_issue_ms": 1.160625,
+      "trial": 405,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.648875,
+      "cross_deployer_issue_ms": 1.091625,
+      "trial": 406,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.608,
+      "cross_deployer_issue_ms": 1.034417,
+      "trial": 407,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.733708,
+      "cross_deployer_issue_ms": 0.974292,
+      "trial": 408,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.583166,
+      "cross_deployer_issue_ms": 0.953,
+      "trial": 409,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.651583,
+      "cross_deployer_issue_ms": 0.940042,
+      "trial": 410,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.632417,
+      "cross_deployer_issue_ms": 0.977125,
+      "trial": 411,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.61575,
+      "cross_deployer_issue_ms": 1.000834,
+      "trial": 412,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.533292,
+      "cross_deployer_issue_ms": 0.997542,
+      "trial": 413,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.79925,
+      "cross_deployer_issue_ms": 1.219167,
+      "trial": 414,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.585833,
+      "cross_deployer_issue_ms": 1.088834,
+      "trial": 415,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.793209,
+      "cross_deployer_issue_ms": 1.429,
+      "trial": 416,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.760791,
+      "cross_deployer_issue_ms": 1.276334,
+      "trial": 417,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.678208,
+      "cross_deployer_issue_ms": 1.180167,
+      "trial": 418,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.806125,
+      "cross_deployer_issue_ms": 1.189708,
+      "trial": 419,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.709209,
+      "cross_deployer_issue_ms": 1.05925,
+      "trial": 420,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.672125,
+      "cross_deployer_issue_ms": 1.017833,
+      "trial": 421,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.710875,
+      "cross_deployer_issue_ms": 1.02525,
+      "trial": 422,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.86775,
+      "cross_deployer_issue_ms": 0.95275,
+      "trial": 423,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.751958,
+      "cross_deployer_issue_ms": 1.036208,
+      "trial": 424,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.423041,
+      "cross_deployer_issue_ms": 1.175208,
+      "trial": 425,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.740584,
+      "cross_deployer_issue_ms": 1.095792,
+      "trial": 426,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.84725,
+      "cross_deployer_issue_ms": 1.1185,
+      "trial": 427,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.63925,
+      "cross_deployer_issue_ms": 1.126208,
+      "trial": 428,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.842917,
+      "cross_deployer_issue_ms": 1.24775,
+      "trial": 429,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.083625,
+      "cross_deployer_issue_ms": 1.112583,
+      "trial": 430,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.860083,
+      "cross_deployer_issue_ms": 1.600083,
+      "trial": 431,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.029708,
+      "cross_deployer_issue_ms": 1.144958,
+      "trial": 432,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.960333,
+      "cross_deployer_issue_ms": 1.268209,
+      "trial": 433,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.11425,
+      "cross_deployer_issue_ms": 1.07575,
+      "trial": 434,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.815584,
+      "cross_deployer_issue_ms": 1.765333,
+      "trial": 435,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.00275,
+      "cross_deployer_issue_ms": 1.401417,
+      "trial": 436,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.116584,
+      "cross_deployer_issue_ms": 1.435125,
+      "trial": 437,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.018541,
+      "cross_deployer_issue_ms": 1.280166,
+      "trial": 438,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.82675,
+      "cross_deployer_issue_ms": 1.230709,
+      "trial": 439,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.198791,
+      "cross_deployer_issue_ms": 1.258292,
+      "trial": 440,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.217833,
+      "cross_deployer_issue_ms": 1.511625,
+      "trial": 441,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.839042,
+      "cross_deployer_issue_ms": 1.118959,
+      "trial": 442,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 5.395375,
+      "cross_deployer_issue_ms": 1.557125,
+      "trial": 443,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.820875,
+      "cross_deployer_issue_ms": 1.63475,
+      "trial": 444,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.899292,
+      "cross_deployer_issue_ms": 1.499,
+      "trial": 445,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.788375,
+      "cross_deployer_issue_ms": 1.159167,
+      "trial": 446,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.782958,
+      "cross_deployer_issue_ms": 1.154,
+      "trial": 447,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.805708,
+      "cross_deployer_issue_ms": 1.101542,
+      "trial": 448,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.814125,
+      "cross_deployer_issue_ms": 1.303458,
+      "trial": 449,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.155916,
+      "cross_deployer_issue_ms": 1.121334,
+      "trial": 450,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.478209,
+      "cross_deployer_issue_ms": 1.220833,
+      "trial": 451,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.931875,
+      "cross_deployer_issue_ms": 1.194959,
+      "trial": 452,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.823709,
+      "cross_deployer_issue_ms": 1.0695,
+      "trial": 453,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.880041,
+      "cross_deployer_issue_ms": 1.076541,
+      "trial": 454,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.704833,
+      "cross_deployer_issue_ms": 0.991375,
+      "trial": 455,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.627958,
+      "cross_deployer_issue_ms": 0.904667,
+      "trial": 456,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.594292,
+      "cross_deployer_issue_ms": 0.948709,
+      "trial": 457,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.518167,
+      "cross_deployer_issue_ms": 0.980458,
+      "trial": 458,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.886,
+      "cross_deployer_issue_ms": 1.14575,
+      "trial": 459,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.661625,
+      "cross_deployer_issue_ms": 1.058375,
+      "trial": 460,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.989416,
+      "cross_deployer_issue_ms": 1.053708,
+      "trial": 461,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.658875,
+      "cross_deployer_issue_ms": 1.062791,
+      "trial": 462,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.766041,
+      "cross_deployer_issue_ms": 1.087333,
+      "trial": 463,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.722542,
+      "cross_deployer_issue_ms": 1.02625,
+      "trial": 464,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.754334,
+      "cross_deployer_issue_ms": 1.092667,
+      "trial": 465,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.405791,
+      "cross_deployer_issue_ms": 0.965292,
+      "trial": 466,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.57725,
+      "cross_deployer_issue_ms": 0.938209,
+      "trial": 467,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.930041,
+      "cross_deployer_issue_ms": 0.96025,
+      "trial": 468,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.651583,
+      "cross_deployer_issue_ms": 1.242083,
+      "trial": 469,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.803459,
+      "cross_deployer_issue_ms": 1.659333,
+      "trial": 470,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.908792,
+      "cross_deployer_issue_ms": 1.106,
+      "trial": 471,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.963083,
+      "cross_deployer_issue_ms": 1.761584,
+      "trial": 472,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.8005,
+      "cross_deployer_issue_ms": 1.293625,
+      "trial": 473,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.207666,
+      "cross_deployer_issue_ms": 1.164792,
+      "trial": 474,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.108583,
+      "cross_deployer_issue_ms": 1.548041,
+      "trial": 475,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.17875,
+      "cross_deployer_issue_ms": 1.359375,
+      "trial": 476,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.004459,
+      "cross_deployer_issue_ms": 1.392958,
+      "trial": 477,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.576458,
+      "cross_deployer_issue_ms": 1.306667,
+      "trial": 478,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.859458,
+      "cross_deployer_issue_ms": 1.238291,
+      "trial": 479,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.921083,
+      "cross_deployer_issue_ms": 1.134792,
+      "trial": 480,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.885125,
+      "cross_deployer_issue_ms": 1.143167,
+      "trial": 481,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.91475,
+      "cross_deployer_issue_ms": 1.105333,
+      "trial": 482,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.738708,
+      "cross_deployer_issue_ms": 1.069291,
+      "trial": 483,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.759958,
+      "cross_deployer_issue_ms": 1.087875,
+      "trial": 484,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.732083,
+      "cross_deployer_issue_ms": 1.050458,
+      "trial": 485,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.615125,
+      "cross_deployer_issue_ms": 1.083542,
+      "trial": 486,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.519,
+      "cross_deployer_issue_ms": 0.933583,
+      "trial": 487,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.534417,
+      "cross_deployer_issue_ms": 0.928166,
+      "trial": 488,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.804541,
+      "cross_deployer_issue_ms": 0.9855,
+      "trial": 489,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.579209,
+      "cross_deployer_issue_ms": 1.056458,
+      "trial": 490,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.474625,
+      "cross_deployer_issue_ms": 0.986875,
+      "trial": 491,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.539125,
+      "cross_deployer_issue_ms": 0.958916,
+      "trial": 492,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.797416,
+      "cross_deployer_issue_ms": 1.082417,
+      "trial": 493,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.674125,
+      "cross_deployer_issue_ms": 1.155625,
+      "trial": 494,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.12,
+      "cross_deployer_issue_ms": 1.1435,
+      "trial": 495,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.136917,
+      "cross_deployer_issue_ms": 1.186833,
+      "trial": 496,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.736125,
+      "cross_deployer_issue_ms": 1.392291,
+      "trial": 497,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.735292,
+      "cross_deployer_issue_ms": 1.194166,
+      "trial": 498,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.780417,
+      "cross_deployer_issue_ms": 1.056709,
+      "trial": 499,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.677417,
+      "cross_deployer_issue_ms": 1.24725,
+      "trial": 500,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.839583,
+      "cross_deployer_issue_ms": 1.174417,
+      "trial": 501,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.736416,
+      "cross_deployer_issue_ms": 1.13475,
+      "trial": 502,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.926375,
+      "cross_deployer_issue_ms": 1.079083,
+      "trial": 503,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.861042,
+      "cross_deployer_issue_ms": 1.186833,
+      "trial": 504,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.759167,
+      "cross_deployer_issue_ms": 1.0555,
+      "trial": 505,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.624708,
+      "cross_deployer_issue_ms": 1.210833,
+      "trial": 506,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.721625,
+      "cross_deployer_issue_ms": 1.021458,
+      "trial": 507,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.584458,
+      "cross_deployer_issue_ms": 0.996041,
+      "trial": 508,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.6105,
+      "cross_deployer_issue_ms": 0.941375,
+      "trial": 509,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.833375,
+      "cross_deployer_issue_ms": 1.083833,
+      "trial": 510,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.753833,
+      "cross_deployer_issue_ms": 1.127084,
+      "trial": 511,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.776792,
+      "cross_deployer_issue_ms": 1.0695,
+      "trial": 512,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.88175,
+      "cross_deployer_issue_ms": 1.127208,
+      "trial": 513,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.346,
+      "cross_deployer_issue_ms": 1.272416,
+      "trial": 514,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.087166,
+      "cross_deployer_issue_ms": 1.547292,
+      "trial": 515,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.821833,
+      "cross_deployer_issue_ms": 1.120708,
+      "trial": 516,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.725584,
+      "cross_deployer_issue_ms": 1.171666,
+      "trial": 517,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.740041,
+      "cross_deployer_issue_ms": 1.010917,
+      "trial": 518,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.724417,
+      "cross_deployer_issue_ms": 1.12375,
+      "trial": 519,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.826125,
+      "cross_deployer_issue_ms": 1.212791,
+      "trial": 520,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.830625,
+      "cross_deployer_issue_ms": 1.078875,
+      "trial": 521,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.744666,
+      "cross_deployer_issue_ms": 1.142666,
+      "trial": 522,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.870375,
+      "cross_deployer_issue_ms": 1.155792,
+      "trial": 523,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.85825,
+      "cross_deployer_issue_ms": 1.212833,
+      "trial": 524,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.663667,
+      "cross_deployer_issue_ms": 1.194042,
+      "trial": 525,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.895542,
+      "cross_deployer_issue_ms": 1.073666,
+      "trial": 526,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.768625,
+      "cross_deployer_issue_ms": 1.103,
+      "trial": 527,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.871666,
+      "cross_deployer_issue_ms": 1.133208,
+      "trial": 528,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.822417,
+      "cross_deployer_issue_ms": 1.177458,
+      "trial": 529,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 6.770709,
+      "cross_deployer_issue_ms": 1.28625,
+      "trial": 530,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.979709,
+      "cross_deployer_issue_ms": 3.740875,
+      "trial": 531,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.156417,
+      "cross_deployer_issue_ms": 1.996083,
+      "trial": 532,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.129166,
+      "cross_deployer_issue_ms": 1.508834,
+      "trial": 533,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.032791,
+      "cross_deployer_issue_ms": 1.266833,
+      "trial": 534,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.000208,
+      "cross_deployer_issue_ms": 1.212333,
+      "trial": 535,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.125334,
+      "cross_deployer_issue_ms": 1.227667,
+      "trial": 536,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.932334,
+      "cross_deployer_issue_ms": 1.455041,
+      "trial": 537,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.451041,
+      "cross_deployer_issue_ms": 1.284583,
+      "trial": 538,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.00375,
+      "cross_deployer_issue_ms": 1.422458,
+      "trial": 539,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.115625,
+      "cross_deployer_issue_ms": 1.518291,
+      "trial": 540,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.874417,
+      "cross_deployer_issue_ms": 1.115916,
+      "trial": 541,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.596084,
+      "cross_deployer_issue_ms": 1.1475,
+      "trial": 542,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.660792,
+      "cross_deployer_issue_ms": 1.043375,
+      "trial": 543,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.570959,
+      "cross_deployer_issue_ms": 1.020792,
+      "trial": 544,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.574083,
+      "cross_deployer_issue_ms": 1.097541,
+      "trial": 545,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.702625,
+      "cross_deployer_issue_ms": 1.057333,
+      "trial": 546,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.5565,
+      "cross_deployer_issue_ms": 0.957,
+      "trial": 547,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.760625,
+      "cross_deployer_issue_ms": 1.108667,
+      "trial": 548,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.489291,
+      "cross_deployer_issue_ms": 1.24025,
+      "trial": 549,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.43475,
+      "cross_deployer_issue_ms": 1.142875,
+      "trial": 550,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.784458,
+      "cross_deployer_issue_ms": 1.305667,
+      "trial": 551,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.71275,
+      "cross_deployer_issue_ms": 1.579709,
+      "trial": 552,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.65275,
+      "cross_deployer_issue_ms": 1.100375,
+      "trial": 553,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.656375,
+      "cross_deployer_issue_ms": 1.05825,
+      "trial": 554,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.017459,
+      "cross_deployer_issue_ms": 0.998625,
+      "trial": 555,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.748417,
+      "cross_deployer_issue_ms": 1.084209,
+      "trial": 556,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.812208,
+      "cross_deployer_issue_ms": 1.0795,
+      "trial": 557,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.708166,
+      "cross_deployer_issue_ms": 1.193875,
+      "trial": 558,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.890209,
+      "cross_deployer_issue_ms": 1.114375,
+      "trial": 559,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.723625,
+      "cross_deployer_issue_ms": 1.094833,
+      "trial": 560,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.849125,
+      "cross_deployer_issue_ms": 1.002542,
+      "trial": 561,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.633959,
+      "cross_deployer_issue_ms": 1.014209,
+      "trial": 562,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.561667,
+      "cross_deployer_issue_ms": 0.936917,
+      "trial": 563,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.673625,
+      "cross_deployer_issue_ms": 0.932875,
+      "trial": 564,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.921708,
+      "cross_deployer_issue_ms": 1.102209,
+      "trial": 565,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.553709,
+      "cross_deployer_issue_ms": 1.119958,
+      "trial": 566,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.340625,
+      "cross_deployer_issue_ms": 1.551042,
+      "trial": 567,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.373583,
+      "cross_deployer_issue_ms": 1.192083,
+      "trial": 568,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.026333,
+      "cross_deployer_issue_ms": 1.461416,
+      "trial": 569,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.871041,
+      "cross_deployer_issue_ms": 1.555209,
+      "trial": 570,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.752833,
+      "cross_deployer_issue_ms": 1.177833,
+      "trial": 571,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.71675,
+      "cross_deployer_issue_ms": 1.016042,
+      "trial": 572,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.835916,
+      "cross_deployer_issue_ms": 0.983333,
+      "trial": 573,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.768542,
+      "cross_deployer_issue_ms": 1.14325,
+      "trial": 574,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.695583,
+      "cross_deployer_issue_ms": 1.1735,
+      "trial": 575,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.936375,
+      "cross_deployer_issue_ms": 1.0725,
+      "trial": 576,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.661417,
+      "cross_deployer_issue_ms": 1.023583,
+      "trial": 577,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.98325,
+      "cross_deployer_issue_ms": 1.111625,
+      "trial": 578,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.848084,
+      "cross_deployer_issue_ms": 1.337708,
+      "trial": 579,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.910125,
+      "cross_deployer_issue_ms": 1.085375,
+      "trial": 580,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.727,
+      "cross_deployer_issue_ms": 1.161875,
+      "trial": 581,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.663916,
+      "cross_deployer_issue_ms": 1.034666,
+      "trial": 582,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.689667,
+      "cross_deployer_issue_ms": 1.01375,
+      "trial": 583,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.290166,
+      "cross_deployer_issue_ms": 1.094084,
+      "trial": 584,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.061083,
+      "cross_deployer_issue_ms": 2.671542,
+      "trial": 585,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.893333,
+      "cross_deployer_issue_ms": 1.122375,
+      "trial": 586,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.011709,
+      "cross_deployer_issue_ms": 1.159125,
+      "trial": 587,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.043542,
+      "cross_deployer_issue_ms": 1.247709,
+      "trial": 588,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.868542,
+      "cross_deployer_issue_ms": 1.150959,
+      "trial": 589,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.371417,
+      "cross_deployer_issue_ms": 1.193,
+      "trial": 590,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.6825,
+      "cross_deployer_issue_ms": 1.176708,
+      "trial": 591,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.677916,
+      "cross_deployer_issue_ms": 1.02525,
+      "trial": 592,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.677375,
+      "cross_deployer_issue_ms": 1.13075,
+      "trial": 593,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.352958,
+      "cross_deployer_issue_ms": 1.411583,
+      "trial": 594,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.839958,
+      "cross_deployer_issue_ms": 1.148417,
+      "trial": 595,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.804167,
+      "cross_deployer_issue_ms": 1.144333,
+      "trial": 596,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.935834,
+      "cross_deployer_issue_ms": 1.246,
+      "trial": 597,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.7195,
+      "cross_deployer_issue_ms": 1.23325,
+      "trial": 598,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.818959,
+      "cross_deployer_issue_ms": 1.100667,
+      "trial": 599,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.768417,
+      "cross_deployer_issue_ms": 1.168791,
+      "trial": 600,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.49275,
+      "cross_deployer_issue_ms": 0.999458,
+      "trial": 601,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.490291,
+      "cross_deployer_issue_ms": 0.9905,
+      "trial": 602,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.729375,
+      "cross_deployer_issue_ms": 1.031334,
+      "trial": 603,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.767833,
+      "cross_deployer_issue_ms": 2.005708,
+      "trial": 604,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.644333,
+      "cross_deployer_issue_ms": 0.98675,
+      "trial": 605,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.618666,
+      "cross_deployer_issue_ms": 0.962334,
+      "trial": 606,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.939209,
+      "cross_deployer_issue_ms": 1.103333,
+      "trial": 607,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.797,
+      "cross_deployer_issue_ms": 1.057666,
+      "trial": 608,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.692708,
+      "cross_deployer_issue_ms": 1.08125,
+      "trial": 609,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.635666,
+      "cross_deployer_issue_ms": 1.033958,
+      "trial": 610,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.614166,
+      "cross_deployer_issue_ms": 1.062708,
+      "trial": 611,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.54975,
+      "cross_deployer_issue_ms": 0.984459,
+      "trial": 612,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.614708,
+      "cross_deployer_issue_ms": 0.962917,
+      "trial": 613,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.674709,
+      "cross_deployer_issue_ms": 0.970792,
+      "trial": 614,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.652042,
+      "cross_deployer_issue_ms": 0.94225,
+      "trial": 615,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.351625,
+      "cross_deployer_issue_ms": 1.118417,
+      "trial": 616,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.09175,
+      "cross_deployer_issue_ms": 1.199292,
+      "trial": 617,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.793667,
+      "cross_deployer_issue_ms": 1.017459,
+      "trial": 618,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.938625,
+      "cross_deployer_issue_ms": 1.339584,
+      "trial": 619,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.866791,
+      "cross_deployer_issue_ms": 1.081958,
+      "trial": 620,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.785667,
+      "cross_deployer_issue_ms": 1.358542,
+      "trial": 621,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.612792,
+      "cross_deployer_issue_ms": 0.999333,
+      "trial": 622,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.468375,
+      "cross_deployer_issue_ms": 0.989667,
+      "trial": 623,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.533166,
+      "cross_deployer_issue_ms": 0.995958,
+      "trial": 624,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.632208,
+      "cross_deployer_issue_ms": 1.017875,
+      "trial": 625,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.583833,
+      "cross_deployer_issue_ms": 0.9745,
+      "trial": 626,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.711416,
+      "cross_deployer_issue_ms": 1.024333,
+      "trial": 627,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.61275,
+      "cross_deployer_issue_ms": 0.958084,
+      "trial": 628,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.744166,
+      "cross_deployer_issue_ms": 2.316084,
+      "trial": 629,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.704,
+      "cross_deployer_issue_ms": 0.991,
+      "trial": 630,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.595875,
+      "cross_deployer_issue_ms": 0.975041,
+      "trial": 631,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.668791,
+      "cross_deployer_issue_ms": 1.075583,
+      "trial": 632,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.582791,
+      "cross_deployer_issue_ms": 0.992292,
+      "trial": 633,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.587125,
+      "cross_deployer_issue_ms": 0.961291,
+      "trial": 634,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.762125,
+      "cross_deployer_issue_ms": 0.938,
+      "trial": 635,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.590709,
+      "cross_deployer_issue_ms": 1.006417,
+      "trial": 636,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.080292,
+      "cross_deployer_issue_ms": 1.137042,
+      "trial": 637,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.719792,
+      "cross_deployer_issue_ms": 2.02025,
+      "trial": 638,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.160542,
+      "cross_deployer_issue_ms": 2.155792,
+      "trial": 639,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.058667,
+      "cross_deployer_issue_ms": 1.542208,
+      "trial": 640,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.829,
+      "cross_deployer_issue_ms": 1.668417,
+      "trial": 641,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.862375,
+      "cross_deployer_issue_ms": 1.16125,
+      "trial": 642,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.773958,
+      "cross_deployer_issue_ms": 1.272125,
+      "trial": 643,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.315167,
+      "cross_deployer_issue_ms": 1.285166,
+      "trial": 644,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.991042,
+      "cross_deployer_issue_ms": 1.375334,
+      "trial": 645,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.517791,
+      "cross_deployer_issue_ms": 2.2305,
+      "trial": 646,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.062333,
+      "cross_deployer_issue_ms": 1.108291,
+      "trial": 647,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.925792,
+      "cross_deployer_issue_ms": 1.172958,
+      "trial": 648,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.670375,
+      "cross_deployer_issue_ms": 1.015583,
+      "trial": 649,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.7395,
+      "cross_deployer_issue_ms": 1.018375,
+      "trial": 650,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.576292,
+      "cross_deployer_issue_ms": 1.014583,
+      "trial": 651,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.701334,
+      "cross_deployer_issue_ms": 0.970917,
+      "trial": 652,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.636792,
+      "cross_deployer_issue_ms": 0.9705,
+      "trial": 653,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.604833,
+      "cross_deployer_issue_ms": 1.865875,
+      "trial": 654,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.509291,
+      "cross_deployer_issue_ms": 1.016333,
+      "trial": 655,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.699958,
+      "cross_deployer_issue_ms": 1.106583,
+      "trial": 656,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.569875,
+      "cross_deployer_issue_ms": 0.982084,
+      "trial": 657,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.755,
+      "cross_deployer_issue_ms": 1.212791,
+      "trial": 658,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.688917,
+      "cross_deployer_issue_ms": 1.190292,
+      "trial": 659,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.582375,
+      "cross_deployer_issue_ms": 1.2495,
+      "trial": 660,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.517666,
+      "cross_deployer_issue_ms": 1.499667,
+      "trial": 661,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.838875,
+      "cross_deployer_issue_ms": 1.573292,
+      "trial": 662,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.010333,
+      "cross_deployer_issue_ms": 1.188917,
+      "trial": 663,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.167917,
+      "cross_deployer_issue_ms": 1.088833,
+      "trial": 664,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.866458,
+      "cross_deployer_issue_ms": 1.078583,
+      "trial": 665,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.98825,
+      "cross_deployer_issue_ms": 1.020667,
+      "trial": 666,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.778792,
+      "cross_deployer_issue_ms": 1.26125,
+      "trial": 667,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.850208,
+      "cross_deployer_issue_ms": 1.350541,
+      "trial": 668,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.006458,
+      "cross_deployer_issue_ms": 1.303583,
+      "trial": 669,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.803542,
+      "cross_deployer_issue_ms": 1.363,
+      "trial": 670,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.9555,
+      "cross_deployer_issue_ms": 1.225708,
+      "trial": 671,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.732875,
+      "cross_deployer_issue_ms": 1.157667,
+      "trial": 672,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.589333,
+      "cross_deployer_issue_ms": 1.063125,
+      "trial": 673,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.702833,
+      "cross_deployer_issue_ms": 1.109708,
+      "trial": 674,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.770959,
+      "cross_deployer_issue_ms": 1.475375,
+      "trial": 675,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.349584,
+      "cross_deployer_issue_ms": 2.119917,
+      "trial": 676,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.766,
+      "cross_deployer_issue_ms": 1.479625,
+      "trial": 677,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.874458,
+      "cross_deployer_issue_ms": 1.642333,
+      "trial": 678,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.814958,
+      "cross_deployer_issue_ms": 2.033916,
+      "trial": 679,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.79425,
+      "cross_deployer_issue_ms": 1.189375,
+      "trial": 680,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.959667,
+      "cross_deployer_issue_ms": 1.168875,
+      "trial": 681,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.909375,
+      "cross_deployer_issue_ms": 1.291791,
+      "trial": 682,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.043208,
+      "cross_deployer_issue_ms": 1.136084,
+      "trial": 683,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.823542,
+      "cross_deployer_issue_ms": 1.243417,
+      "trial": 684,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.635292,
+      "cross_deployer_issue_ms": 1.123583,
+      "trial": 685,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.583416,
+      "cross_deployer_issue_ms": 1.070375,
+      "trial": 686,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.574708,
+      "cross_deployer_issue_ms": 0.996333,
+      "trial": 687,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.666667,
+      "cross_deployer_issue_ms": 0.997458,
+      "trial": 688,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.267209,
+      "cross_deployer_issue_ms": 1.106125,
+      "trial": 689,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.219459,
+      "cross_deployer_issue_ms": 1.124458,
+      "trial": 690,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.196542,
+      "cross_deployer_issue_ms": 1.201334,
+      "trial": 691,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 5.119084,
+      "cross_deployer_issue_ms": 2.828667,
+      "trial": 692,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.275417,
+      "cross_deployer_issue_ms": 1.388542,
+      "trial": 693,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.874875,
+      "cross_deployer_issue_ms": 1.162083,
+      "trial": 694,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.128667,
+      "cross_deployer_issue_ms": 1.30575,
+      "trial": 695,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.90075,
+      "cross_deployer_issue_ms": 1.21075,
+      "trial": 696,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.877333,
+      "cross_deployer_issue_ms": 1.271583,
+      "trial": 697,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.971,
+      "cross_deployer_issue_ms": 1.188167,
+      "trial": 698,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.806833,
+      "cross_deployer_issue_ms": 1.183625,
+      "trial": 699,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.838917,
+      "cross_deployer_issue_ms": 1.712,
+      "trial": 700,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.139083,
+      "cross_deployer_issue_ms": 1.209917,
+      "trial": 701,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.103791,
+      "cross_deployer_issue_ms": 1.256583,
+      "trial": 702,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.866166,
+      "cross_deployer_issue_ms": 1.262709,
+      "trial": 703,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.079875,
+      "cross_deployer_issue_ms": 2.076209,
+      "trial": 704,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.270458,
+      "cross_deployer_issue_ms": 1.177,
+      "trial": 705,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.718875,
+      "cross_deployer_issue_ms": 1.247459,
+      "trial": 706,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.761667,
+      "cross_deployer_issue_ms": 1.8005,
+      "trial": 707,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.8005,
+      "cross_deployer_issue_ms": 2.441834,
+      "trial": 708,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.127958,
+      "cross_deployer_issue_ms": 1.189625,
+      "trial": 709,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.562875,
+      "cross_deployer_issue_ms": 1.510167,
+      "trial": 710,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.932292,
+      "cross_deployer_issue_ms": 1.233166,
+      "trial": 711,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.830625,
+      "cross_deployer_issue_ms": 1.1425,
+      "trial": 712,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.616208,
+      "cross_deployer_issue_ms": 1.185875,
+      "trial": 713,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.748875,
+      "cross_deployer_issue_ms": 0.9915,
+      "trial": 714,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.818625,
+      "cross_deployer_issue_ms": 1.074708,
+      "trial": 715,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.7715,
+      "cross_deployer_issue_ms": 1.1215,
+      "trial": 716,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.712875,
+      "cross_deployer_issue_ms": 1.005334,
+      "trial": 717,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.697,
+      "cross_deployer_issue_ms": 1.015041,
+      "trial": 718,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.9035,
+      "cross_deployer_issue_ms": 1.065958,
+      "trial": 719,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.552083,
+      "cross_deployer_issue_ms": 1.690667,
+      "trial": 720,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.817292,
+      "cross_deployer_issue_ms": 2.248792,
+      "trial": 721,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.702,
+      "cross_deployer_issue_ms": 1.483542,
+      "trial": 722,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.815916,
+      "cross_deployer_issue_ms": 1.103666,
+      "trial": 723,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.949458,
+      "cross_deployer_issue_ms": 1.5945,
+      "trial": 724,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.730292,
+      "cross_deployer_issue_ms": 1.063875,
+      "trial": 725,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.632542,
+      "cross_deployer_issue_ms": 0.995458,
+      "trial": 726,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.7305,
+      "cross_deployer_issue_ms": 1.260875,
+      "trial": 727,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.924458,
+      "cross_deployer_issue_ms": 1.275042,
+      "trial": 728,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.078166,
+      "cross_deployer_issue_ms": 2.915834,
+      "trial": 729,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.95325,
+      "cross_deployer_issue_ms": 1.25525,
+      "trial": 730,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.692125,
+      "cross_deployer_issue_ms": 1.175041,
+      "trial": 731,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.863583,
+      "cross_deployer_issue_ms": 1.226042,
+      "trial": 732,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.876125,
+      "cross_deployer_issue_ms": 1.140709,
+      "trial": 733,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.865375,
+      "cross_deployer_issue_ms": 1.123084,
+      "trial": 734,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 5.759292,
+      "cross_deployer_issue_ms": 1.114875,
+      "trial": 735,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.7575,
+      "cross_deployer_issue_ms": 1.563916,
+      "trial": 736,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.060875,
+      "cross_deployer_issue_ms": 1.329167,
+      "trial": 737,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.088708,
+      "cross_deployer_issue_ms": 1.21375,
+      "trial": 738,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.654084,
+      "cross_deployer_issue_ms": 1.112334,
+      "trial": 739,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.828458,
+      "cross_deployer_issue_ms": 1.422375,
+      "trial": 740,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.544291,
+      "cross_deployer_issue_ms": 1.412834,
+      "trial": 741,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.462208,
+      "cross_deployer_issue_ms": 1.612042,
+      "trial": 742,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.929334,
+      "cross_deployer_issue_ms": 1.616125,
+      "trial": 743,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.022792,
+      "cross_deployer_issue_ms": 1.092375,
+      "trial": 744,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.898416,
+      "cross_deployer_issue_ms": 1.244542,
+      "trial": 745,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.914167,
+      "cross_deployer_issue_ms": 1.339333,
+      "trial": 746,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.843708,
+      "cross_deployer_issue_ms": 1.33825,
+      "trial": 747,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.738875,
+      "cross_deployer_issue_ms": 1.060625,
+      "trial": 748,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.839292,
+      "cross_deployer_issue_ms": 1.059,
+      "trial": 749,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.03275,
+      "cross_deployer_issue_ms": 1.290083,
+      "trial": 750,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.232625,
+      "cross_deployer_issue_ms": 1.213791,
+      "trial": 751,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.22675,
+      "cross_deployer_issue_ms": 1.52275,
+      "trial": 752,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.970667,
+      "cross_deployer_issue_ms": 1.299083,
+      "trial": 753,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 36.042875,
+      "cross_deployer_issue_ms": 13.357584,
+      "trial": 754,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 5.270167,
+      "cross_deployer_issue_ms": 1.860458,
+      "trial": 755,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.029125,
+      "cross_deployer_issue_ms": 1.212625,
+      "trial": 756,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.1655,
+      "cross_deployer_issue_ms": 1.619958,
+      "trial": 757,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 5.088083,
+      "cross_deployer_issue_ms": 2.671458,
+      "trial": 758,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.629875,
+      "cross_deployer_issue_ms": 1.486,
+      "trial": 759,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 15.360917,
+      "cross_deployer_issue_ms": 1.752125,
+      "trial": 760,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 8.479875,
+      "cross_deployer_issue_ms": 2.323292,
+      "trial": 761,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.174583,
+      "cross_deployer_issue_ms": 1.174834,
+      "trial": 762,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.973542,
+      "cross_deployer_issue_ms": 1.2845,
+      "trial": 763,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.821375,
+      "cross_deployer_issue_ms": 1.204542,
+      "trial": 764,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.03725,
+      "cross_deployer_issue_ms": 1.04125,
+      "trial": 765,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.243375,
+      "cross_deployer_issue_ms": 1.216708,
+      "trial": 766,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.021792,
+      "cross_deployer_issue_ms": 1.275833,
+      "trial": 767,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.696875,
+      "cross_deployer_issue_ms": 1.169292,
+      "trial": 768,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.908583,
+      "cross_deployer_issue_ms": 1.035917,
+      "trial": 769,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.899084,
+      "cross_deployer_issue_ms": 1.277833,
+      "trial": 770,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.567959,
+      "cross_deployer_issue_ms": 1.04925,
+      "trial": 771,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.604959,
+      "cross_deployer_issue_ms": 1.070709,
+      "trial": 772,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.064083,
+      "cross_deployer_issue_ms": 1.170833,
+      "trial": 773,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 6.898167,
+      "cross_deployer_issue_ms": 1.208458,
+      "trial": 774,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.374375,
+      "cross_deployer_issue_ms": 4.531459,
+      "trial": 775,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.158625,
+      "cross_deployer_issue_ms": 1.216375,
+      "trial": 776,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.181333,
+      "cross_deployer_issue_ms": 1.253417,
+      "trial": 777,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.164458,
+      "cross_deployer_issue_ms": 1.23675,
+      "trial": 778,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.372166,
+      "cross_deployer_issue_ms": 2.4315,
+      "trial": 779,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.783333,
+      "cross_deployer_issue_ms": 1.490292,
+      "trial": 780,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.148209,
+      "cross_deployer_issue_ms": 1.722292,
+      "trial": 781,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.9745,
+      "cross_deployer_issue_ms": 1.290125,
+      "trial": 782,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.07475,
+      "cross_deployer_issue_ms": 1.522667,
+      "trial": 783,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.401541,
+      "cross_deployer_issue_ms": 1.319084,
+      "trial": 784,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.152375,
+      "cross_deployer_issue_ms": 1.564,
+      "trial": 785,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.874875,
+      "cross_deployer_issue_ms": 1.173333,
+      "trial": 786,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 10.531917,
+      "cross_deployer_issue_ms": 1.13175,
+      "trial": 787,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.218333,
+      "cross_deployer_issue_ms": 3.287541,
+      "trial": 788,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.941625,
+      "cross_deployer_issue_ms": 1.2485,
+      "trial": 789,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.142292,
+      "cross_deployer_issue_ms": 1.248416,
+      "trial": 790,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.860459,
+      "cross_deployer_issue_ms": 1.223042,
+      "trial": 791,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.955,
+      "cross_deployer_issue_ms": 1.1225,
+      "trial": 792,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.188291,
+      "cross_deployer_issue_ms": 1.503417,
+      "trial": 793,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.547417,
+      "cross_deployer_issue_ms": 1.292125,
+      "trial": 794,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.985167,
+      "cross_deployer_issue_ms": 1.176375,
+      "trial": 795,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.884625,
+      "cross_deployer_issue_ms": 1.249459,
+      "trial": 796,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.590167,
+      "cross_deployer_issue_ms": 1.147875,
+      "trial": 797,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.651625,
+      "cross_deployer_issue_ms": 0.997,
+      "trial": 798,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.702375,
+      "cross_deployer_issue_ms": 0.956042,
+      "trial": 799,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.56775,
+      "cross_deployer_issue_ms": 0.943459,
+      "trial": 800,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.7265,
+      "cross_deployer_issue_ms": 1.011958,
+      "trial": 801,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.624708,
+      "cross_deployer_issue_ms": 1.030834,
+      "trial": 802,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.861916,
+      "cross_deployer_issue_ms": 1.209791,
+      "trial": 803,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.061209,
+      "cross_deployer_issue_ms": 2.235833,
+      "trial": 804,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.744875,
+      "cross_deployer_issue_ms": 1.129042,
+      "trial": 805,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.552375,
+      "cross_deployer_issue_ms": 1.340292,
+      "trial": 806,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.088625,
+      "cross_deployer_issue_ms": 1.23925,
+      "trial": 807,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.847,
+      "cross_deployer_issue_ms": 1.076667,
+      "trial": 808,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.846292,
+      "cross_deployer_issue_ms": 1.248167,
+      "trial": 809,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.586417,
+      "cross_deployer_issue_ms": 1.286375,
+      "trial": 810,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.81925,
+      "cross_deployer_issue_ms": 0.979917,
+      "trial": 811,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.877417,
+      "cross_deployer_issue_ms": 1.167834,
+      "trial": 812,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.727541,
+      "cross_deployer_issue_ms": 1.132292,
+      "trial": 813,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.227541,
+      "cross_deployer_issue_ms": 1.048209,
+      "trial": 814,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.245167,
+      "cross_deployer_issue_ms": 2.082833,
+      "trial": 815,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.872791,
+      "cross_deployer_issue_ms": 1.655708,
+      "trial": 816,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.59125,
+      "cross_deployer_issue_ms": 1.457834,
+      "trial": 817,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.871917,
+      "cross_deployer_issue_ms": 1.557875,
+      "trial": 818,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.9705,
+      "cross_deployer_issue_ms": 1.302042,
+      "trial": 819,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.125959,
+      "cross_deployer_issue_ms": 1.434208,
+      "trial": 820,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.953292,
+      "cross_deployer_issue_ms": 1.911834,
+      "trial": 821,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.136042,
+      "cross_deployer_issue_ms": 1.607916,
+      "trial": 822,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.176916,
+      "cross_deployer_issue_ms": 1.212917,
+      "trial": 823,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.352834,
+      "cross_deployer_issue_ms": 1.458584,
+      "trial": 824,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.079541,
+      "cross_deployer_issue_ms": 1.794625,
+      "trial": 825,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.852292,
+      "cross_deployer_issue_ms": 1.190375,
+      "trial": 826,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.010417,
+      "cross_deployer_issue_ms": 1.1565,
+      "trial": 827,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.749,
+      "cross_deployer_issue_ms": 1.417333,
+      "trial": 828,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.991875,
+      "cross_deployer_issue_ms": 4.327333,
+      "trial": 829,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.908542,
+      "cross_deployer_issue_ms": 1.867417,
+      "trial": 830,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.067542,
+      "cross_deployer_issue_ms": 1.28825,
+      "trial": 831,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.850417,
+      "cross_deployer_issue_ms": 1.31575,
+      "trial": 832,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.86075,
+      "cross_deployer_issue_ms": 1.17475,
+      "trial": 833,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.851292,
+      "cross_deployer_issue_ms": 1.208125,
+      "trial": 834,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.838583,
+      "cross_deployer_issue_ms": 1.155416,
+      "trial": 835,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.8205,
+      "cross_deployer_issue_ms": 1.222917,
+      "trial": 836,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.689125,
+      "cross_deployer_issue_ms": 1.107333,
+      "trial": 837,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.757167,
+      "cross_deployer_issue_ms": 1.18275,
+      "trial": 838,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.858209,
+      "cross_deployer_issue_ms": 1.379459,
+      "trial": 839,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.71025,
+      "cross_deployer_issue_ms": 1.184791,
+      "trial": 840,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.633,
+      "cross_deployer_issue_ms": 1.160375,
+      "trial": 841,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.640208,
+      "cross_deployer_issue_ms": 1.12175,
+      "trial": 842,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.797416,
+      "cross_deployer_issue_ms": 1.04575,
+      "trial": 843,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.782167,
+      "cross_deployer_issue_ms": 1.186,
+      "trial": 844,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.633541,
+      "cross_deployer_issue_ms": 1.110375,
+      "trial": 845,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.583917,
+      "cross_deployer_issue_ms": 1.243625,
+      "trial": 846,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.8175,
+      "cross_deployer_issue_ms": 1.013625,
+      "trial": 847,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.969208,
+      "cross_deployer_issue_ms": 1.149875,
+      "trial": 848,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.949375,
+      "cross_deployer_issue_ms": 1.196666,
+      "trial": 849,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.703125,
+      "cross_deployer_issue_ms": 1.103917,
+      "trial": 850,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.872542,
+      "cross_deployer_issue_ms": 1.049417,
+      "trial": 851,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.935958,
+      "cross_deployer_issue_ms": 1.213583,
+      "trial": 852,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.678417,
+      "cross_deployer_issue_ms": 1.082791,
+      "trial": 853,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.277542,
+      "cross_deployer_issue_ms": 22.640917,
+      "trial": 854,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.122708,
+      "cross_deployer_issue_ms": 1.227125,
+      "trial": 855,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.918,
+      "cross_deployer_issue_ms": 1.237542,
+      "trial": 856,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.852,
+      "cross_deployer_issue_ms": 1.035125,
+      "trial": 857,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.053125,
+      "cross_deployer_issue_ms": 1.220417,
+      "trial": 858,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.024459,
+      "cross_deployer_issue_ms": 1.135709,
+      "trial": 859,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.992334,
+      "cross_deployer_issue_ms": 1.131708,
+      "trial": 860,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.959208,
+      "cross_deployer_issue_ms": 1.211125,
+      "trial": 861,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.437541,
+      "cross_deployer_issue_ms": 1.162667,
+      "trial": 862,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.845458,
+      "cross_deployer_issue_ms": 1.184666,
+      "trial": 863,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.896084,
+      "cross_deployer_issue_ms": 1.092667,
+      "trial": 864,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.869834,
+      "cross_deployer_issue_ms": 1.082459,
+      "trial": 865,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.872417,
+      "cross_deployer_issue_ms": 1.048334,
+      "trial": 866,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.948292,
+      "cross_deployer_issue_ms": 1.066042,
+      "trial": 867,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.927875,
+      "cross_deployer_issue_ms": 1.079875,
+      "trial": 868,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.868,
+      "cross_deployer_issue_ms": 1.18475,
+      "trial": 869,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.907166,
+      "cross_deployer_issue_ms": 1.013,
+      "trial": 870,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.681208,
+      "cross_deployer_issue_ms": 1.157916,
+      "trial": 871,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 8.981375,
+      "cross_deployer_issue_ms": 1.392125,
+      "trial": 872,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.181833,
+      "cross_deployer_issue_ms": 1.305375,
+      "trial": 873,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.373333,
+      "cross_deployer_issue_ms": 1.237583,
+      "trial": 874,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.964958,
+      "cross_deployer_issue_ms": 1.316375,
+      "trial": 875,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.032458,
+      "cross_deployer_issue_ms": 1.549208,
+      "trial": 876,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.935084,
+      "cross_deployer_issue_ms": 1.222542,
+      "trial": 877,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.140583,
+      "cross_deployer_issue_ms": 1.167917,
+      "trial": 878,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.125583,
+      "cross_deployer_issue_ms": 1.250416,
+      "trial": 879,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.148125,
+      "cross_deployer_issue_ms": 1.2615,
+      "trial": 880,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.136292,
+      "cross_deployer_issue_ms": 1.173875,
+      "trial": 881,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.696875,
+      "cross_deployer_issue_ms": 1.227917,
+      "trial": 882,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.043667,
+      "cross_deployer_issue_ms": 1.256,
+      "trial": 883,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.90475,
+      "cross_deployer_issue_ms": 1.075125,
+      "trial": 884,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.86625,
+      "cross_deployer_issue_ms": 1.08125,
+      "trial": 885,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.848125,
+      "cross_deployer_issue_ms": 1.031917,
+      "trial": 886,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.965875,
+      "cross_deployer_issue_ms": 1.057375,
+      "trial": 887,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.866959,
+      "cross_deployer_issue_ms": 1.098125,
+      "trial": 888,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.979625,
+      "cross_deployer_issue_ms": 1.189417,
+      "trial": 889,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.937458,
+      "cross_deployer_issue_ms": 1.169625,
+      "trial": 890,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.864667,
+      "cross_deployer_issue_ms": 1.116167,
+      "trial": 891,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.332833,
+      "cross_deployer_issue_ms": 1.024834,
+      "trial": 892,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.930084,
+      "cross_deployer_issue_ms": 1.249167,
+      "trial": 893,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.957416,
+      "cross_deployer_issue_ms": 1.108375,
+      "trial": 894,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.828792,
+      "cross_deployer_issue_ms": 1.1035,
+      "trial": 895,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.567125,
+      "cross_deployer_issue_ms": 1.2885,
+      "trial": 896,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.619208,
+      "cross_deployer_issue_ms": 1.27,
+      "trial": 897,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.098917,
+      "cross_deployer_issue_ms": 1.225209,
+      "trial": 898,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.99825,
+      "cross_deployer_issue_ms": 1.242625,
+      "trial": 899,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.949292,
+      "cross_deployer_issue_ms": 1.03825,
+      "trial": 900,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.868291,
+      "cross_deployer_issue_ms": 1.135,
+      "trial": 901,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.039125,
+      "cross_deployer_issue_ms": 1.071333,
+      "trial": 902,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.486917,
+      "cross_deployer_issue_ms": 1.177125,
+      "trial": 903,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.215583,
+      "cross_deployer_issue_ms": 1.182084,
+      "trial": 904,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.938917,
+      "cross_deployer_issue_ms": 1.330875,
+      "trial": 905,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.182666,
+      "cross_deployer_issue_ms": 1.329125,
+      "trial": 906,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.000042,
+      "cross_deployer_issue_ms": 1.048708,
+      "trial": 907,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.00725,
+      "cross_deployer_issue_ms": 1.604083,
+      "trial": 908,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 6.142375,
+      "cross_deployer_issue_ms": 2.041541,
+      "trial": 909,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.632042,
+      "cross_deployer_issue_ms": 3.436334,
+      "trial": 910,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.065042,
+      "cross_deployer_issue_ms": 1.445833,
+      "trial": 911,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.146542,
+      "cross_deployer_issue_ms": 1.468208,
+      "trial": 912,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.107541,
+      "cross_deployer_issue_ms": 1.370333,
+      "trial": 913,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.872333,
+      "cross_deployer_issue_ms": 1.322584,
+      "trial": 914,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.037166,
+      "cross_deployer_issue_ms": 1.283375,
+      "trial": 915,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.936417,
+      "cross_deployer_issue_ms": 1.184042,
+      "trial": 916,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.164416,
+      "cross_deployer_issue_ms": 1.11525,
+      "trial": 917,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.24475,
+      "cross_deployer_issue_ms": 2.646875,
+      "trial": 918,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.255041,
+      "cross_deployer_issue_ms": 2.454958,
+      "trial": 919,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.081959,
+      "cross_deployer_issue_ms": 1.121625,
+      "trial": 920,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.9965,
+      "cross_deployer_issue_ms": 1.150583,
+      "trial": 921,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.219583,
+      "cross_deployer_issue_ms": 1.467583,
+      "trial": 922,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.459833,
+      "cross_deployer_issue_ms": 1.450458,
+      "trial": 923,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.581042,
+      "cross_deployer_issue_ms": 1.255625,
+      "trial": 924,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.391417,
+      "cross_deployer_issue_ms": 1.374625,
+      "trial": 925,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.913083,
+      "cross_deployer_issue_ms": 1.361,
+      "trial": 926,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.142625,
+      "cross_deployer_issue_ms": 1.778584,
+      "trial": 927,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.856167,
+      "cross_deployer_issue_ms": 1.234416,
+      "trial": 928,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.092625,
+      "cross_deployer_issue_ms": 1.200542,
+      "trial": 929,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.877917,
+      "cross_deployer_issue_ms": 1.456292,
+      "trial": 930,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.719834,
+      "cross_deployer_issue_ms": 1.041958,
+      "trial": 931,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.413791,
+      "cross_deployer_issue_ms": 1.229583,
+      "trial": 932,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.464208,
+      "cross_deployer_issue_ms": 1.117625,
+      "trial": 933,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.87625,
+      "cross_deployer_issue_ms": 1.789584,
+      "trial": 934,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.024958,
+      "cross_deployer_issue_ms": 1.399416,
+      "trial": 935,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.847875,
+      "cross_deployer_issue_ms": 1.277125,
+      "trial": 936,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.9115,
+      "cross_deployer_issue_ms": 1.1325,
+      "trial": 937,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.63625,
+      "cross_deployer_issue_ms": 1.146458,
+      "trial": 938,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.05025,
+      "cross_deployer_issue_ms": 1.116834,
+      "trial": 939,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.014792,
+      "cross_deployer_issue_ms": 1.142333,
+      "trial": 940,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.81825,
+      "cross_deployer_issue_ms": 1.162375,
+      "trial": 941,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.11625,
+      "cross_deployer_issue_ms": 1.22875,
+      "trial": 942,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.820125,
+      "cross_deployer_issue_ms": 1.161583,
+      "trial": 943,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.676042,
+      "cross_deployer_issue_ms": 1.271917,
+      "trial": 944,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.9355,
+      "cross_deployer_issue_ms": 1.048584,
+      "trial": 945,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.683292,
+      "cross_deployer_issue_ms": 1.050958,
+      "trial": 946,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.9275,
+      "cross_deployer_issue_ms": 1.110042,
+      "trial": 947,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.835,
+      "cross_deployer_issue_ms": 1.083875,
+      "trial": 948,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.68425,
+      "cross_deployer_issue_ms": 0.959625,
+      "trial": 949,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.864834,
+      "cross_deployer_issue_ms": 0.982042,
+      "trial": 950,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.647959,
+      "cross_deployer_issue_ms": 1.002,
+      "trial": 951,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.894625,
+      "cross_deployer_issue_ms": 1.034583,
+      "trial": 952,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.927291,
+      "cross_deployer_issue_ms": 1.018416,
+      "trial": 953,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.838917,
+      "cross_deployer_issue_ms": 1.196375,
+      "trial": 954,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.977125,
+      "cross_deployer_issue_ms": 1.577208,
+      "trial": 955,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.894167,
+      "cross_deployer_issue_ms": 1.812917,
+      "trial": 956,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.91675,
+      "cross_deployer_issue_ms": 1.172625,
+      "trial": 957,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.840166,
+      "cross_deployer_issue_ms": 1.12425,
+      "trial": 958,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.735834,
+      "cross_deployer_issue_ms": 1.154167,
+      "trial": 959,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.861542,
+      "cross_deployer_issue_ms": 1.540333,
+      "trial": 960,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.92775,
+      "cross_deployer_issue_ms": 1.33175,
+      "trial": 961,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.999959,
+      "cross_deployer_issue_ms": 1.304042,
+      "trial": 962,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.828917,
+      "cross_deployer_issue_ms": 1.403875,
+      "trial": 963,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.983416,
+      "cross_deployer_issue_ms": 1.126791,
+      "trial": 964,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.94475,
+      "cross_deployer_issue_ms": 1.301,
+      "trial": 965,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.84325,
+      "cross_deployer_issue_ms": 1.133875,
+      "trial": 966,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.801041,
+      "cross_deployer_issue_ms": 1.058959,
+      "trial": 967,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.941834,
+      "cross_deployer_issue_ms": 1.198083,
+      "trial": 968,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.199542,
+      "cross_deployer_issue_ms": 1.120709,
+      "trial": 969,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.88075,
+      "cross_deployer_issue_ms": 1.223291,
+      "trial": 970,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.267834,
+      "cross_deployer_issue_ms": 1.133125,
+      "trial": 971,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.192417,
+      "cross_deployer_issue_ms": 1.122958,
+      "trial": 972,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.854625,
+      "cross_deployer_issue_ms": 1.073875,
+      "trial": 973,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.849334,
+      "cross_deployer_issue_ms": 1.160334,
+      "trial": 974,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.266792,
+      "cross_deployer_issue_ms": 1.193208,
+      "trial": 975,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.001,
+      "cross_deployer_issue_ms": 1.112042,
+      "trial": 976,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.737834,
+      "cross_deployer_issue_ms": 1.132,
+      "trial": 977,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.997958,
+      "cross_deployer_issue_ms": 1.152041,
+      "trial": 978,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.046833,
+      "cross_deployer_issue_ms": 1.36375,
+      "trial": 979,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.665209,
+      "cross_deployer_issue_ms": 1.142,
+      "trial": 980,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.881333,
+      "cross_deployer_issue_ms": 1.198584,
+      "trial": 981,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.857958,
+      "cross_deployer_issue_ms": 1.071583,
+      "trial": 982,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.762666,
+      "cross_deployer_issue_ms": 1.047708,
+      "trial": 983,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 3.296042,
+      "cross_deployer_issue_ms": 1.071083,
+      "trial": 984,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 4.197542,
+      "cross_deployer_issue_ms": 1.912584,
+      "trial": 985,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.203958,
+      "cross_deployer_issue_ms": 1.211042,
+      "trial": 986,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.5205,
+      "cross_deployer_issue_ms": 1.241083,
+      "trial": 987,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.348125,
+      "cross_deployer_issue_ms": 1.35,
+      "trial": 988,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.589625,
+      "cross_deployer_issue_ms": 1.8655,
+      "trial": 989,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.93825,
+      "cross_deployer_issue_ms": 1.186084,
+      "trial": 990,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.873292,
+      "cross_deployer_issue_ms": 1.251917,
+      "trial": 991,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.837667,
+      "cross_deployer_issue_ms": 1.2265,
+      "trial": 992,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.837375,
+      "cross_deployer_issue_ms": 1.181541,
+      "trial": 993,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.023333,
+      "cross_deployer_issue_ms": 1.201375,
+      "trial": 994,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.692042,
+      "cross_deployer_issue_ms": 1.319083,
+      "trial": 995,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.941458,
+      "cross_deployer_issue_ms": 1.110042,
+      "trial": 996,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.830083,
+      "cross_deployer_issue_ms": 1.019458,
+      "trial": 997,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 2.066708,
+      "cross_deployer_issue_ms": 1.232916,
+      "trial": 998,
+      "verified": true
+    },
+    {
+      "chain_nodes": 2,
+      "complete_verify_ms": 1.976584,
+      "cross_deployer_issue_ms": 1.046417,
+      "trial": 999,
+      "verified": true
+    }
+  ],
+  "valid_trials": 1000,
+  "verifier_predicates": [
+    "trusted registry lookup",
+    "public-key-derived key_id match",
+    "local key revocation",
+    "Ed25519 primary signature",
+    "validity interval",
+    "released-output SHA-256",
+    "within-chain nonce uniqueness",
+    "durable SQLite replay lookup",
+    "Signed-DAG parent reference and depth",
+    "Signed-DAG parent and child edge co-signatures"
+  ],
+  "warmup": 100
+}

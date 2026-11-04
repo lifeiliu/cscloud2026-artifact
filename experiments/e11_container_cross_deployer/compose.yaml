@@ -1,0 +1,33 @@
+services:
+  parent-signer:
+    build:
+      context: ../..
+      dockerfile: experiments/e11_container_cross_deployer/Dockerfile
+    command: python -m experiments.e11_container_cross_deployer.signer_service --deployer platform_A
+    environment:
+      E11_RPC_AUTHKEY: ${E11_RPC_AUTHKEY:-local-e11-reproduction-only}
+
+  child-signer:
+    build:
+      context: ../..
+      dockerfile: experiments/e11_container_cross_deployer/Dockerfile
+    command: python -m experiments.e11_container_cross_deployer.signer_service --deployer platform_B
+    environment:
+      E11_RPC_AUTHKEY: ${E11_RPC_AUTHKEY:-local-e11-reproduction-only}
+
+  coordinator:
+    build:
+      context: ../..
+      dockerfile: experiments/e11_container_cross_deployer/Dockerfile
+    command: python -m experiments.e11_container_cross_deployer.coordinator
+    depends_on:
+      - parent-signer
+      - child-signer
+    environment:
+      E11_RPC_AUTHKEY: ${E11_RPC_AUTHKEY:-local-e11-reproduction-only}
+      E11_PARENT_HOST: parent-signer
+      E11_CHILD_HOST: child-signer
+      E11_TRIALS: ${E11_TRIALS:-1000}
+      E11_WARMUP: ${E11_WARMUP:-100}
+    volumes:
+      - ../../artifacts/reproduced/e11_container:/results

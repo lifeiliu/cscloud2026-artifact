@@ -1,0 +1,40 @@
+{
+  "schema": "e13-authenticated-fanout-v1",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "repeats": 10,
+  "limits": [
+    0,
+    1,
+    5,
+    20
+  ],
+  "designs": [
+    "linked_list",
+    "merkle",
+    "signed_dag"
+  ],
+  "fixture_clock": "2026-09-13T12:00:00+00:00",
+  "python": "3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "sqlite": "3.45.1",
+  "cryptography": "48.0.1",
+  "source_manifest_hash": "9725bf4f1425b684b1f8e8bfc55f3e5e6aa8986752b061ba9db9e7d1dfa201a6",
+  "command": [
+    "cscloud2026/experiments/e13_authenticated_fanout/run.py",
+    "run",
+    "--seeds",
+    "17",
+    "29",
+    "43",
+    "--repeats",
+    "10",
+    "--out",
+    "cscloud2026/experiments/e13_authenticated_fanout/results/formal_20260913"
+  ],
+  "pid": 3357,
+  "scope": "Per immutable parent receipt, one local SQLite store; no global quota or malicious-child claim."
+}

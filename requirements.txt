@@ -1,0 +1,10 @@
+# Minimal dependencies for the included test suite and E10/E11 reproduction.
+cryptography==48.0.1
+pytest==8.1.1
+numpy==1.26.4
+scipy==1.12.0
+langgraph==1.2.6
+
+# Optional dependencies for experiments that use them:
+# E12 requires a local Ollama service plus this Streamable-HTTP MCP SDK line.
+# mcp>=1.27,<2

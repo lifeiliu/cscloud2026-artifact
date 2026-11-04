@@ -1,0 +1,10 @@
+# This Dockerfile-specific ignore list keeps the E11 image context minimal and
+# does not change the repository's other Docker builds.
+**
+!src/
+!src/**
+!experiments/
+!experiments/e10_multiprocess_cross_deployer/
+!experiments/e10_multiprocess_cross_deployer/**
+!experiments/e11_container_cross_deployer/
+!experiments/e11_container_cross_deployer/**

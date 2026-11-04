@@ -1,0 +1,51 @@
+{
+  "framework": "langgraph",
+  "framework_version": "1.2.6",
+  "scenario": "Planner -> Researcher -> Writer",
+  "design": "linked_list",
+  "node_outputs": "deterministic; no LLM invocation",
+  "n_trials": 1000,
+  "warmup": 100,
+  "all_chains_verified": true,
+  "per_node_sign_ms": {
+    "mean": 0.1708,
+    "p50": 0.1566,
+    "p95": 0.214,
+    "p99": 0.4845
+  },
+  "total_sign_overhead_per_task_ms": {
+    "mean": 0.5123,
+    "p50": 0.4639,
+    "p95": 0.6628,
+    "p99": 1.473
+  },
+  "full_chain_verify_ms": {
+    "mean": 0.8323,
+    "p50": 0.7628,
+    "p95": 1.0134,
+    "p99": 2.5957
+  },
+  "sample": {
+    "chain_nodes": 3,
+    "records": [
+      {
+        "agent": "planner",
+        "deployer": "platform_A",
+        "ancestry_depth": 0,
+        "sign_latency_ms": 0.133875
+      },
+      {
+        "agent": "researcher",
+        "deployer": "platform_A",
+        "ancestry_depth": 1,
+        "sign_latency_ms": 0.1525
+      },
+      {
+        "agent": "writer",
+        "deployer": "platform_B",
+        "ancestry_depth": 2,
+        "sign_latency_ms": 0.15475
+      }
+    ]
+  }
+}

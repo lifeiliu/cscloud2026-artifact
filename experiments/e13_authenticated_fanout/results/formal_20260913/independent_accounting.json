@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "event_kinds": {
+    "serial": 7137,
+    "race": 18,
+    "restart": 9,
+    "crash": 9
+  },
+  "serial_rejections_with_unchanged_state": 1233,
+  "sqlite_integrity_checks": 477,
+  "event_log_bytes": 19376325,
+  "source_files": 65,
+  "formal_seconds": 108.66871229093522,
+  "events_sha256": "6792c70c7b1ccb8d5b7df84b8ed98eff43bc2cc8346aee6f5878f4c9c6206a64"
+}

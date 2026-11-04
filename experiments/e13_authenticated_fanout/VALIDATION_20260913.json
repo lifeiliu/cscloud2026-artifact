@@ -1,0 +1,13 @@
+{
+  "focused_tests": {
+    "command": "python3 -B -m pytest -q -p no:cacheprovider cscloud2026/experiments/e13_authenticated_fanout/tests",
+    "passed": 21,
+    "seconds": 5.09
+  },
+  "existing_regression": {
+    "command": "python3 -B -m pytest -q -p no:cacheprovider tests/integration/test_complete_chain_verifier.py tests/integration/test_chain_round_trip.py tests/integration/test_asr_matrix.py",
+    "cwd": "[repository-root]",
+    "passed": 75,
+    "seconds": 25.33
+  }
+}

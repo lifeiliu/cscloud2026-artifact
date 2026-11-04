@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "changes": [
+    {
+      "file": "experiments/e13_authenticated_fanout/VALIDATION_20260913.json",
+      "original_sha256": "63294ecbfca3e16efed86b1cb0683b9d8d921e519fa89f53ad4f80a8f4449aec",
+      "public_sha256": "5ab72c0c879810f6f9a00415dcf094b647b046e543627615f500b90bd28dafc4",
+      "reason": "Remove local identifying repository path; no executable or signed input changed."
+    },
+    {
+      "file": "experiments/e13_authenticated_fanout/results/formal_20260913/source_snapshot/e13/VALIDATION_20260913.json",
+      "original_sha256": "63294ecbfca3e16efed86b1cb0683b9d8d921e519fa89f53ad4f80a8f4449aec",
+      "public_sha256": "5ab72c0c879810f6f9a00415dcf094b647b046e543627615f500b90bd28dafc4",
+      "reason": "Remove local identifying repository path; no executable or signed input changed."
+    }
+  ],
+  "e13_events_unchanged": true,
+  "e13_events_sha256": "6792c70c7b1ccb8d5b7df84b8ed98eff43bc2cc8346aee6f5878f4c9c6206a64",
+  "note": "Recorded source_hashes.json remains original. Only the listed validation-document path is redacted in its snapshot; executable source hashes remain original. public_snapshot_hashes.json binds the distributed snapshot.",
+  "base_results": "E10/E11 public result copies were previously sanitized: cloud routing identifiers and host metadata are redacted, while trial correctness and timing values are retained.",
+  "excluded": [
+    "Git history",
+    "author and paper files",
+    "review correspondence",
+    "private keys and credentials",
+    "cloud resource topology and administrative logs",
+    "historical exploratory LLM data",
+    "recorded SQLite stores (reconstructed by E13 replay)"
+  ]
+}

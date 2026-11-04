@@ -1,0 +1,11 @@
+#cloud-config
+hostname: ${host_name}
+package_update: true
+runcmd:
+  - [ bash, -lc, "dnf install -y docker && systemctl enable --now docker" ]
+  - [ bash, -lc, "image='${runtime_image}'; registry=$${image%%/*}; for i in {1..60}; do aws ecr get-login-password --region ${aws_region} | docker login --username AWS --password-stdin $registry && break || sleep 5; done" ]
+  - [ bash, -lc, "docker pull '${runtime_image}'" ]
+%{ if deployer != "" ~}
+  - [ bash, -lc, "auth=$(aws ssm get-parameter --name ${auth_parameter} --with-decryption --region ${aws_region} --query Parameter.Value --output text); docker run -d --restart=no --name e11-signer --network host -e E11_RPC_AUTHKEY=\"$auth\" ${runtime_image} python -m experiments.e11_container_cross_deployer.signer_service --deployer ${deployer} --port 6000" ]
+%{ endif ~}
+final_message: "E11-AWS ${host_role} bootstrap completed."

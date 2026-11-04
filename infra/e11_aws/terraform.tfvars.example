@@ -1,0 +1,7 @@
+owner  = "researcher"
+expiry = "2026-09-01T23:59:59Z"
+
+# The checked-in configuration is bootstrap-only. Compute starts only after an
+# explicit reviewed plan supplies a digest-pinned runtime image.
+enable_compute = false
+runtime_image  = ""

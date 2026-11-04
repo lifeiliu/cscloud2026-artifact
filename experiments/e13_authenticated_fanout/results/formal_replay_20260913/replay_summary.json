@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "events": 7173,
+  "counts": {
+    "serial": 7137,
+    "race": 18,
+    "restart": 9,
+    "crash": 9
+  },
+  "source_events_sha256": "6792c70c7b1ccb8d5b7df84b8ed98eff43bc2cc8346aee6f5878f4c9c6206a64",
+  "scope": "Exact signed corpus and logical state replay; races linearized to recorded winners; crash records checked as unchanged committed state."
+}

@@ -124,3 +124,7 @@ describes SQLite stores omitted here. Replay reconstructs fresh stores.
 
 `VALIDATION.json` records checks actually run on this package; it distinguishes
 new package validation from original experimental measurements.
+
+## License
+
+MIT; see `LICENSE`.
